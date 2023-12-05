@@ -1,11 +1,11 @@
   const visualSwiper = new Swiper('.section-visual .swiper', {
     slidesPerView: 1,
     pagination: {
-      el: ".section-visual .pagination",
+      el: ".pagination",
       clickable: true
     },
     autoplay:{
-      delay: 5000,
+      delay: 2000,
     },
     loop: true
   })
@@ -31,7 +31,7 @@
 
   const boardSwiper = new Swiper('.section-board .swiper', {
     pagination : {
-      el: ".section-board .board-pagination",
+      el: ".pagination",
       clickable: true
     },
     autoplay:{
@@ -51,22 +51,30 @@
       prevEl: ".footer .footer-award-prev"
     },
   })
-  
 
 
-  document.querySelector(".section-board .board-control-area").addEventListener('change', function(e){
-    const boardChecked = e.target.checked
+  document.querySelector("section .control-area").onchange = (e) =>{
+    console.log(e.target);
+    const checked = e.target.checked
     const label = e.target.nextElementSibling;
-    if(boardChecked){
+    if(checked){
       label.classList.add('pause')
-      boardSwiper.autoplay.stop();
+      if(e.target.classList.contains("visual")){
+      visualSwiper.autoplay.stop();
+      }
+      if(e.target.classList.contains("board")){
+        boardSwiper.autoplay.stop();
+      }
     }else{
       label.classList.remove('pause')
-      boardSwiper.autoplay.start();
+      if(e.target.classList.contains("visual")){
+        visualSwiper.autoplay.start();
+      }
+      if(e.target.classList.contains("visual")){
+        boardSwiper.autoplay.start();
+      }
     }
-  })
-
-
+  }
 
 const authTabList= document.querySelector('.section-auth .tab-list');
 const authIdSave = document.querySelector('.form .save') ?? ""
@@ -157,15 +165,29 @@ authIdSave.onclick = (e) => {
 }
 
 const family = document.querySelector('.family');
-const familyList = document.querySelector('.family-list')
+const familyList = document.querySelector('.family-list');
 family.onclick = (e) => {
   e.preventDefault()
   family.classList.toggle('opacity')
 }
 
-const topBannerArea = document.querySelector(".banner-area")
-const bannerClose = document.querySelector(".banner-area .banner-closeBtn");
+const topBannerArea = document.querySelector(".banner-area");
+const bannerClose = document.querySelector(".banner-closeBtn");
 bannerClose.onclick = (e) => {
   e.preventDefault();
   topBannerArea.classList.add("on")
 }
+
+const btnSearch = document.querySelector(".header .btn-search");
+const btnMenu = document.querySelector(".header .btn-menu");
+
+btnSearch.onclick = (e) => {
+  e.preventDefault();
+  console.log('검색버튼 클릭');
+}
+
+btnMenu.onclick = (e) => {
+  e.preventDefault();
+  console.log('메뉴버튼 클릭');
+}
+

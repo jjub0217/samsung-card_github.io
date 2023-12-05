@@ -24,22 +24,37 @@
         }
       }
 
-      .gnb {}
+      .nav {
+        &-list {
+          display: flex;
+          font-size: 20px;
+          color: #111;
+          gap: 73px;
+        }
 
-      .nav-list {
-        display: flex;
-        font-size: 20px;
-        color: #111;
-        gap: 73px;
-
-        .nav-item {
+        &-item {
           line-height: 1;
           font-weight: 500;
           letter-spacing: -1px;
+
+          &:hover {
+            color: #0080ff;
+            position: relative;
+
+            &::after {
+              content: '';
+              width: 100%;
+              height: 2px;
+              background: #2090ff;
+              position: absolute;
+              bottom: -10px;
+              left: 0px;
+            }
+          }
         }
       }
 
-      .search-menu-area {
+      .btn-box {
         display: flex;
         justify-content: center;
         gap: 16px;
@@ -47,85 +62,56 @@
         .btn {
           width: 20px;
           height: 20px;
+          border: none;
         }
 
         .btn-search {
           background: url("../assets/i_search.png") no-repeat center / contain;
-          border: none;
         }
 
         .btn-menu {
           background: url("../assets/i_burgerbar.png") no-repeat center / contain;
-          border: none;
-
         }
       }
 
-    }
+      .util-auth-area {
+        width: 100%;
+        height: 88px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-    .util-auth-area {
-      width: 100%;
-      height: 88px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 14px;
-      color: #666;
-
-
-      .util-area {
-
-        .util-list {
-          display: flex;
-          align-items: center;
-
-          .util-item {
-            display: flex;
-            align-items: center;
-
-            &:not(:first-child)::before {
-              content: "";
-              display: block;
-              background-color: #e2e5eb;
-              width: 1px;
-              height: 12px;
-              margin: 0 10px;
-            }
-
-            a {
-              letter-spacing: -1px;
-            }
-          }
-        }
-
-
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 14px;
+        color: #666;
       }
 
+      .util-list,
       .auth-area {
         display: flex;
         align-items: center;
 
-        a:not(:first-child)::before {
-          content: "";
-          display: inline-block;
-          background-color: #e2e5eb;
-          width: 1px;
-          height: 12px;
-          margin: 0 10px;
-        }
-
-        a {
+        .item {
+          display: flex;
+          align-items: center;
           letter-spacing: -1px;
+
+          &:hover {
+            color: #0080ff;
+          }
+
+          &+.item::before {
+            content: "";
+            display: inline-block;
+            background-color: #e2e5eb;
+            width: 1px;
+            height: 12px;
+            margin: 0 10px;
+          }
         }
       }
     }
-
-
   }
-
-
 }

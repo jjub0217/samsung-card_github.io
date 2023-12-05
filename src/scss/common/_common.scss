@@ -16,3 +16,13 @@
   width: 1224px;
   margin: 0 auto;
 }
+
+@keyframes slide_up {
+  0% {
+    height: 50px;
+  }
+
+  100% {
+    height: 0px;
+  }
+}
