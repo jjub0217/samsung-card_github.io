@@ -9,14 +9,35 @@
   <!-- css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.css">
   <link rel="stylesheet" href="./src/css/style.css">
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.min.js"></script>
+  <script src="./src/js/main.js" defer></script>
 </head>
 
 <body>
   <div class="wrapper">
+    <div class="banner-area">
+      <a href="" class="text">
+        새롭게 바뀐 삼성카드 앱으로 간편하게 로그인하세요!
+      </a>
+      <div class="btn-area">
+        <button class="btn google">
+          <img src="./src/assets/구글_플레이스토어.png" alt="구글플레이스토어" class="icon">
+          <span>다운로드</span>
+        </button>
+        <button class="btn apple">
+          <img src="/src/assets/애플_스토어.png" alt="애플스토어" class="icon">
+          <span>다운로드</span>
+        </button>
+      </div>
+      <button class="banner-closeBtn" aria-label="배너닫기">
+      </button>
+    </div>
     <header class="header">
       <div class="inner">
+        <div class="group-flex">
 
-        <div class="logo-wrap">
           <h1 class="logo">
             <a href="">
               <span class="blind">삼성카드</span>
@@ -34,8 +55,8 @@
           </nav>
 
           <div class="search-menu-area">
-            <button class="btn btn-search" />
-            <button class="btn btn-menu" />
+            <button class="btn btn-search" aria-label="검색"></button>
+            <button class="btn btn-menu" aria-label="메뉴열기" aria-expanded="false" aria-haspopup="menu"></button>
           </div>
 
           <div class="util-auth-area">
@@ -68,7 +89,6 @@
     </header>
     <main class="conatiner inner">
 
-      <!-- <div class="grid-area main-top"> -->
       <div class="main-top">
         <section class="section-visual">
           <h2 class="blind">삼성카드 소개 슬라이드</h2>
@@ -925,8 +945,6 @@
   </div>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.min.js"></script>
-  <script src="./src/js/main.js"></script>
 </body>
 
 </html>

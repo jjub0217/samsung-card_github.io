@@ -1,4 +1,3 @@
-(function (){
   const visualSwiper = new Swiper('.section-visual .swiper', {
     slidesPerView: 1,
     pagination: {
@@ -54,19 +53,6 @@
   })
   
 
-  document.querySelector(".section-visual .control-area").addEventListener('change', function(e){
-    const checked = e.target.checked
-    const label = e.target.nextElementSibling;
-    if(checked){
-      label.classList.add('pause')
-      visualSwiper.autoplay.stop();
-    }else{
-      label.classList.remove('pause')
-      visualSwiper.autoplay.start();
-    }
-  })
-
-
 
   document.querySelector(".section-board .board-control-area").addEventListener('change', function(e){
     const boardChecked = e.target.checked
@@ -81,7 +67,6 @@
   })
 
 
-}())
 
 const authTabList= document.querySelector('.section-auth .tab-list');
 const authIdSave = document.querySelector('.form .save') ?? ""
@@ -176,4 +161,11 @@ const familyList = document.querySelector('.family-list')
 family.onclick = (e) => {
   e.preventDefault()
   family.classList.toggle('opacity')
+}
+
+const topBannerArea = document.querySelector(".banner-area")
+const bannerClose = document.querySelector(".banner-area .banner-closeBtn");
+bannerClose.onclick = (e) => {
+  e.preventDefault();
+  topBannerArea.classList.add("on")
 }
