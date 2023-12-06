@@ -1,3 +1,16 @@
+  
+  const header = document.querySelector(".header")
+  window.onscroll = (e)=> {
+    console.log(e);
+    let curr =  window.scrollY
+    console.log(curr);
+    if(curr > 50){
+      header.classList.add("scrollTop")
+    }else{
+      header.classList.remove('scrollTop')
+    }
+  }
+  
   const visualSwiper = new Swiper('.section-visual .swiper', {
     slidesPerView: 1,
     pagination: {
@@ -52,34 +65,37 @@
     },
   })
 
+  const autoplayBtn = document.querySelectorAll("section .control-area");
 
-  document.querySelector("section .control-area").onchange = (e) =>{
-    console.log(e.target);
-    const checked = e.target.checked
-    const label = e.target.nextElementSibling;
-    if(checked){
-      label.classList.add('pause')
-      if(e.target.classList.contains("visual")){
-      visualSwiper.autoplay.stop();
-      }
-      if(e.target.classList.contains("board")){
-        boardSwiper.autoplay.stop();
-      }
-    }else{
-      label.classList.remove('pause')
-      if(e.target.classList.contains("visual")){
-        visualSwiper.autoplay.start();
-      }
-      if(e.target.classList.contains("visual")){
-        boardSwiper.autoplay.start();
+  autoplayBtn.forEach(btn => {
+    btn.onchange = (e) => {
+      const checked = e.target.checked
+      const label = e.target.nextElementSibling;
+      if(checked){
+        label.classList.add('pause')
+        if(e.target.classList.contains("visual")){
+          visualSwiper.autoplay.stop();
+        }
+        if(e.target.classList.contains("board")){
+          boardSwiper.autoplay.stop();
+        }
+      }else{
+        label.classList.remove('pause')
+        if(e.target.classList.contains("visual")){
+          visualSwiper.autoplay.start();
+        }
+        if(e.target.classList.contains("visual")){
+          boardSwiper.autoplay.start();
+        }
       }
     }
-  }
+  })
 
-const authTabList= document.querySelector('.section-auth .tab-list');
+
+const authTabList= document.querySelector('.section-auth .auth-list');
 const authIdSave = document.querySelector('.form .save') ?? ""
 const authIdSaveBtn = document.querySelector('.form .save button')
-const loginInner = document.querySelector('.login-inner').children
+const authContents = document.querySelectorAll('.auth-contents .on')
 const joinText1 = document.querySelector('.join-text1')
 
 // ul
@@ -96,8 +112,10 @@ const tabAuthMove = (target) =>{
     }
   })
 }
+
 const render = () => {
-  let loginAreas = [...loginInner];
+  let loginAreas = [...authContents];
+  console.log(loginAreas);
   const targetId = authTabList.querySelector('.on').id;
 
   loginAreas.filter(area => {
@@ -123,7 +141,7 @@ const render = () => {
 }
 
 authTabList.onclick = (e) => {
-  if ( !e.target.matches('.tab-list > .tab-item')) return;
+  if ( !e.target.matches('.auth-list > .auth-item')) return;
   tabAuthMove(e.target);
   render()
 }
@@ -160,7 +178,6 @@ cardTabList.onclick = (e) => {
 
 authIdSave.onclick = (e) => {
   if (!e.target.matches('.form .save') && !e.target.matches('.save button')) return;
-  console.log('움직임');
   authIdSaveBtn.classList.toggle("no")
 }
 
@@ -190,4 +207,3 @@ btnMenu.onclick = (e) => {
   e.preventDefault();
   console.log('메뉴버튼 클릭');
 }
-
