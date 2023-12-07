@@ -1,16 +1,22 @@
-  
+
+const topBannerArea = document.querySelector(".top-banner");
+const bannerClose = document.querySelector(".banner-closeBtn");
+bannerClose.onclick = (e) => {
+  e.preventDefault();
+  topBannerArea.classList.add("on")
+}
+
   const header = document.querySelector(".header")
   window.onscroll = (e)=> {
-    console.log(e);
     let curr =  window.scrollY
-    console.log(curr);
     if(curr > 50){
       header.classList.add("scrollTop")
     }else{
       header.classList.remove('scrollTop')
     }
   }
-  
+
+ 
   const visualSwiper = new Swiper('.section-visual .swiper', {
     slidesPerView: 1,
     pagination: {
@@ -42,6 +48,14 @@
     },
   })
 
+  ScrollTrigger.create({
+    trigger: ".section-event .left-area",
+    pin: true,
+    markers:false,
+    start: "top 162px",
+    end: "bottom 65%",
+  });
+  
   const boardSwiper = new Swiper('.section-board .swiper', {
     pagination : {
       el: ".pagination",
@@ -60,8 +74,8 @@
     spaceBetween: 15,
     speed: 3000,
     navigation: {
-      nextEl: ".footer .footer-award-next",
-      prevEl: ".footer .footer-award-prev"
+      nextEl: ".footer .btn-next",
+      prevEl: ".footer .btn-prev"
     },
   })
 
@@ -188,19 +202,28 @@ family.onclick = (e) => {
   family.classList.toggle('opacity')
 }
 
-const topBannerArea = document.querySelector(".banner-area");
-const bannerClose = document.querySelector(".banner-closeBtn");
-bannerClose.onclick = (e) => {
-  e.preventDefault();
-  topBannerArea.classList.add("on")
-}
-
 const btnSearch = document.querySelector(".header .btn-search");
 const btnMenu = document.querySelector(".header .btn-menu");
-
+const subArea1 = document.querySelector(".subArea1")
+const subAreaInput = document.querySelector(".search-area input")
+const inputClearBtn = document.querySelector(".input-clear")
+const menu = document.querySelector(".menu")
 btnSearch.onclick = (e) => {
   e.preventDefault();
-  console.log('검색버튼 클릭');
+  subArea1.classList.toggle("on")
+  e.target.classList.toggle("close")
+  menu.classList.toggle("none")
+}
+subAreaInput.onkeyup = (e) => {
+  console.log(e.target.value);
+  if(e.target.value){
+    inputClearBtn.classList.add("on")
+  }else{
+    inputClearBtn.classList.remove("on")
+  }
+}
+inputClearBtn.onclick = (e)  => {
+  subAreaInput.value = ""
 }
 
 btnMenu.onclick = (e) => {
