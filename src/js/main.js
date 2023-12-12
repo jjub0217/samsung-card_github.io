@@ -19,7 +19,6 @@
   }
 
 
-
   const visualSwiper = new Swiper('.section-visual .swiper', {
     slidesPerView: 1,
     pagination: {
@@ -269,16 +268,38 @@ searchAreaInput.onkeyup = (e) => {
     inputClearBtn.classList.remove("on")
   }
 }
-inputClearBtn.onclick = (e)  => {
+inputClearBtn.onclick = ()  => {
   searchAreaInput.value = ""
 }
 
+
+const dimmed = document.querySelector(".dimmed")
+
 btnMenu.onclick = (e) => {
   e.preventDefault();
-  console.log('메뉴버튼 클릭');
-  // gnb.classList.toggle("on")
+  // console.log('메뉴버튼 클릭');
+  gnb.classList.toggle("on")
+  dimmed.classList.add("on")
 }
 
+const wrapper = document.querySelector(".wrapper")
+const innerGnb = document.querySelector(".gnb > div")
 
+
+
+
+wrapper.onclick = (e) => {
+  if(dimmed.classList.contains("on")){
+      console.log('gnb가 열림');
+    if(!innerGnb.contains(e.target)){
+     console.log('gnb가 눌린게 아님');
+    }else{
+       console.log('gnb가 눌림');
+    }
+
+  }else{
+    console.log('gnb가 안열림');
+  }
+}
 
 

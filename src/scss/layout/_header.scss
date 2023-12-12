@@ -1,10 +1,16 @@
 .header {
+  position: relative;
+  z-index: 3;
+
   &.scrollTop {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 3;
+  }
+
+  .background {
     background: #fff;
   }
 
@@ -136,14 +142,16 @@
   }
 
   .gnb {
-    // display: none;
+    display: none;
 
-    // &.on {
-    display: block;
-    // }
+
+    &.on {
+      display: block;
+    }
 
     .inner {
       display: flex;
+      background: #fff;
 
       &::before {
         display: none;

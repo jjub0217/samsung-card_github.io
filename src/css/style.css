@@ -89,6 +89,20 @@ ul {
   margin: 0 auto;
 }
 
+.dimmed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  display: none;
+}
+.dimmed.on {
+  display: block;
+}
+
 @keyframes slide_up {
   0% {
     height: 50px;
@@ -106,12 +120,18 @@ ul {
     height: 0px;
   }
 }
+.header {
+  position: relative;
+  z-index: 3;
+}
 .header.scrollTop {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 3;
+}
+.header .background {
   background: #fff;
 }
 .header .inner {
@@ -221,10 +241,14 @@ ul {
   margin: 0 10px;
 }
 .header .gnb {
+  display: none;
+}
+.header .gnb.on {
   display: block;
 }
 .header .gnb .inner {
   display: flex;
+  background: #fff;
 }
 .header .gnb .inner::before {
   display: none;
