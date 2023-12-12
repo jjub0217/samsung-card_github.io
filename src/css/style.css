@@ -97,6 +97,15 @@ ul {
     height: 0px;
   }
 }
+@keyframes slide-up {
+  0% {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  100% {
+    height: 0px;
+  }
+}
 .header.scrollTop {
   position: fixed;
   top: 0;
@@ -175,7 +184,7 @@ ul {
 .header .inner .group-flex .btn-box .btn-menu {
   background: url("../assets/i_burgerbar.png") no-repeat center/contain;
 }
-.header .inner .group-flex .util-auth-area {
+.header .inner .group-flex .business-auth-area {
   width: 100%;
   height: 88px;
   display: flex;
@@ -187,22 +196,22 @@ ul {
   font-size: 14px;
   color: #666;
 }
-.header .inner .group-flex .util-list,
+.header .inner .group-flex .business-list,
 .header .inner .group-flex .auth-area {
   display: flex;
   align-items: center;
 }
-.header .inner .group-flex .util-list .item,
+.header .inner .group-flex .business-list .item,
 .header .inner .group-flex .auth-area .item {
   display: flex;
   align-items: center;
   letter-spacing: -1px;
 }
-.header .inner .group-flex .util-list .item:hover,
+.header .inner .group-flex .business-list .item:hover,
 .header .inner .group-flex .auth-area .item:hover {
   color: #0080ff;
 }
-.header .inner .group-flex .util-list .item + .item::before,
+.header .inner .group-flex .business-list .item + .item::before,
 .header .inner .group-flex .auth-area .item + .item::before {
   content: "";
   display: inline-block;
@@ -211,31 +220,150 @@ ul {
   height: 12px;
   margin: 0 10px;
 }
-.header .subArea1 {
-  display: none;
-}
-.header .subArea1.on {
+.header .gnb {
   display: block;
 }
-.header .subArea1 .inner {
-  background: #f2f4f7;
+.header .gnb .inner {
+  display: flex;
 }
-.header .subArea1 .inner::before {
+.header .gnb .inner::before {
   display: none;
 }
-.header .subArea1 .search-area {
+.header .gnb .inner .nav-list {
+  width: 270px;
+  height: 735px;
+  padding-top: 40px;
+  background-color: #f3f5f8;
+}
+.header .gnb .inner .nav-item {
+  display: flex;
+  height: 62px;
+  background-color: #f3f5f8;
+}
+.header .gnb .inner .nav-item.on .nav-title {
+  color: #fff;
+  background-color: #2e81f8;
+  font-weight: bold;
+}
+.header .gnb .inner .nav-item.on .depth1-menu {
+  display: flex;
+}
+.header .gnb .inner .nav-title {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 15px;
+  font-size: 24px;
+  color: #0b0d0f;
+}
+.header .gnb .inner .depth1-menu {
+  display: none;
+  flex-wrap: wrap;
+  gap: 46px;
+  position: absolute;
+  top: 0px;
+  left: 270px;
+  width: 700px;
+  padding: 0 63px;
+}
+.header .gnb .inner .depth1-list {
+  width: 268px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.header .gnb .inner .depth1-item {
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+.header .gnb .inner .depth1-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #b7b7b7;
+}
+.header .gnb .inner .depth1-title[role=button] {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  padding-bottom: 13px;
+}
+.header .gnb .inner .depth1-title[role=button]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 13%;
+  background: url("../assets/btn_arrow_up.png") no-repeat;
+  transform: rotate(180deg);
+  width: 16px;
+  height: 10px;
+}
+.header .gnb .inner .flex-box {
+  display: flex;
+  gap: 40px;
+}
+.header .gnb .inner .flex-box:nth-child(1) {
+  padding-top: 60px;
+}
+.header .gnb .inner .flex-box.on .depth2-list {
+  display: block;
+}
+.header .gnb .inner .flex-box.on .depth1-title[role=button]::after {
+  transform: rotate(0deg);
+}
+.header .gnb .inner .flex-box .depth2-list {
+  display: none;
+}
+.header .gnb .inner .favorite-menu {
+  position: absolute;
+  right: 0;
+  padding-top: 40px;
+  background: rgb(154, 192, 157);
+  width: calc(100% - 270px - 700px);
+  height: 100%;
+}
+.header .gnb .inner .favorite-menu .title {
+  color: #202020;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 21px;
+}
+.header .search-chatbot-area {
+  display: none;
+}
+.header .search-chatbot-area.on {
+  display: block;
+}
+.header .search-chatbot-area .inner {
+  background: #f2f4f7;
+}
+.header .search-chatbot-area .inner::before {
+  display: none;
+}
+.header .search-chatbot-area .search-area {
   padding: 48px 0;
   background: #fff;
   border-top: 1px solid #cacaca;
   border-bottom: 1px solid #d0d0d0;
 }
-.header .subArea1 .search-area .sub-inner {
+.header .search-chatbot-area .search-area .sub-inner {
   position: relative;
   max-width: 696px;
   margin: 0 auto;
   border-bottom: 2px solid #2b2e38;
 }
-.header .subArea1 .search-area .sub-inner::after {
+.header .search-chatbot-area .search-area .sub-inner::after {
   content: "";
   display: block;
   position: absolute;
@@ -247,7 +375,7 @@ ul {
   background: url("../assets/btn_search_chatbot.png") no-repeat;
   background-size: cover;
 }
-.header .subArea1 .search-area input {
+.header .search-chatbot-area .search-area .input {
   display: block;
   width: calc(100% - 64px);
   background: transparent;
@@ -258,20 +386,20 @@ ul {
   font-size: 22px;
   padding-right: 30px;
 }
-.header .subArea1 .search-area input::-moz-placeholder {
+.header .search-chatbot-area .search-area .input::-moz-placeholder {
   font-size: 22px;
   color: #7b7e86;
   letter-spacing: -1px;
 }
-.header .subArea1 .search-area input::placeholder {
+.header .search-chatbot-area .search-area .input::placeholder {
   font-size: 22px;
   color: #7b7e86;
   letter-spacing: -1px;
 }
-.header .subArea1 .search-area input::-webkit-search-decoration, .header .subArea1 .search-area input::-webkit-search-cancel-button, .header .subArea1 .search-area input::-webkit-search-results-button, .header .subArea1 .search-area input::-webkit-search-results-decoration {
+.header .search-chatbot-area .search-area .input::-webkit-search-decoration, .header .search-chatbot-area .search-area .input::-webkit-search-cancel-button, .header .search-chatbot-area .search-area .input::-webkit-search-results-button, .header .search-chatbot-area .search-area .input::-webkit-search-results-decoration {
   display: none;
 }
-.header .subArea1 .search-area .input-clear {
+.header .search-chatbot-area .search-area .input-clear {
   display: none;
   position: absolute;
   top: 50%;
@@ -279,15 +407,14 @@ ul {
   transform: translateY(-50%);
   width: 33px;
   height: 38px;
-  background: #f00;
   border: 0;
   background: url("../assets/btn_input_del.png") no-repeat;
   background-position: center;
 }
-.header .subArea1 .search-area .input-clear.on {
+.header .search-chatbot-area .search-area .input-clear.on {
   display: block;
 }
-.header .subArea1 .chatbot-area {
+.header .search-chatbot-area .chatbot-area {
   display: flex;
   align-items: center;
   gap: 47px;
@@ -296,13 +423,13 @@ ul {
   background: #ff0;
   padding: 55px 60px 75px;
 }
-.header .subArea1 .chatbot-area .title {
+.header .search-chatbot-area .chatbot-area .title {
   font-size: 22px;
   font-weight: bold;
   color: #0079ea;
   padding-right: 15px;
 }
-.header .subArea1 .chatbot-list {
+.header .search-chatbot-area .chatbot-list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -310,14 +437,14 @@ ul {
        column-gap: 10px;
   row-gap: 15px;
 }
-.header .subArea1 .chatbot-contents {
+.header .search-chatbot-area .chatbot-contents {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 38px;
 }
-.header .subArea1 .chatbot-item {
+.header .search-chatbot-area .chatbot-item {
   border: 1px solid #d3d5da;
   border-radius: 30px;
   padding: 4px 10px;

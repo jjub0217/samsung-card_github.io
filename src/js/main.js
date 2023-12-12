@@ -1,12 +1,14 @@
 
-const topBannerArea = document.querySelector(".top-banner");
-const bannerClose = document.querySelector(".banner-closeBtn");
-bannerClose.onclick = (e) => {
-  e.preventDefault();
-  topBannerArea.classList.add("on")
-}
+  const topBannerArea = document.querySelector(".top-banner");
+  const bannerClose = document.querySelector(".banner-closeBtn");
+
+  bannerClose.onclick = (e) => {
+    e.preventDefault();
+    topBannerArea.classList.add("on")
+  }
 
   const header = document.querySelector(".header")
+
   window.onscroll = (e)=> {
     let curr =  window.scrollY
     if(curr > 50){
@@ -16,7 +18,8 @@ bannerClose.onclick = (e) => {
     }
   }
 
- 
+
+
   const visualSwiper = new Swiper('.section-visual .swiper', {
     slidesPerView: 1,
     pagination: {
@@ -169,7 +172,6 @@ const tabCardMove = (target) =>{
       cardType.classList.remove('on')
     }
   })
-
 }
 
 const cardRender = () => {
@@ -204,17 +206,62 @@ family.onclick = (e) => {
 
 const btnSearch = document.querySelector(".header .btn-search");
 const btnMenu = document.querySelector(".header .btn-menu");
-const subArea1 = document.querySelector(".subArea1")
-const subAreaInput = document.querySelector(".search-area input")
+const searchChatbotArea = document.querySelector(".search-chatbot-area")
+const searchAreaInput = document.querySelector(".search-area input")
 const inputClearBtn = document.querySelector(".input-clear")
 const menu = document.querySelector(".menu")
+const gnb = document.querySelector(".gnb")
+const navList = document.querySelector(".gnb .nav-list")
+const navItems = document.querySelectorAll(".gnb .nav-item")
+const depth1Menu = document.querySelectorAll(".gnb .depth1-menu")
+
+navList.onclick = (e) => {
+  if(!e.target.matches('.nav-list .nav-item > a')) return;
+  e.preventDefault()
+  navItemOn(e.target.parentNode)
+}
+
+const navItemOn = (target) => {
+  [...navList.children].forEach(navItem => {
+    if(navItem === target){
+      target.classList.add('on')
+    }else{
+      navItem.classList.remove('on')
+    }
+  })
+}
+
+
+depth1Menu.forEach(depth1Menu => {
+  depth1Menu.onclick = (e) => {
+    e.preventDefault()
+    if(!e.target.matches('.depth1-item > button')) return;
+    onFlexBox(e.target.parentNode.parentNode.parentNode)
+  }
+}) 
+
+const onFlexBox = (target) => {
+  const depth1FlexBoxes = document.querySelectorAll(".gnb .nav-list .nav-item.on .flex-box")
+  if(target.classList.contains("on")){
+    target.classList.remove("on")
+  }else{
+    depth1FlexBoxes.forEach(flexBox => {
+      if(flexBox.classList.contains("on"))
+      flexBox.classList.remove("on")
+      target.classList.add("on")
+    })
+  }
+}
+
+
+
 btnSearch.onclick = (e) => {
   e.preventDefault();
-  subArea1.classList.toggle("on")
+  searchChatbotArea.classList.toggle("on")
   e.target.classList.toggle("close")
   menu.classList.toggle("none")
 }
-subAreaInput.onkeyup = (e) => {
+searchAreaInput.onkeyup = (e) => {
   console.log(e.target.value);
   if(e.target.value){
     inputClearBtn.classList.add("on")
@@ -223,10 +270,15 @@ subAreaInput.onkeyup = (e) => {
   }
 }
 inputClearBtn.onclick = (e)  => {
-  subAreaInput.value = ""
+  searchAreaInput.value = ""
 }
 
 btnMenu.onclick = (e) => {
   e.preventDefault();
   console.log('메뉴버튼 클릭');
+  // gnb.classList.toggle("on")
 }
+
+
+
+

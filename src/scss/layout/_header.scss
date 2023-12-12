@@ -94,7 +94,7 @@
         }
       }
 
-      .util-auth-area {
+      .business-auth-area {
         width: 100%;
         height: 88px;
         display: flex;
@@ -108,7 +108,7 @@
         color: #666;
       }
 
-      .util-list,
+      .business-list,
       .auth-area {
         display: flex;
         align-items: center;
@@ -135,7 +135,163 @@
     }
   }
 
-  .subArea1 {
+  .gnb {
+    // display: none;
+
+    // &.on {
+    display: block;
+    // }
+
+    .inner {
+      display: flex;
+
+      &::before {
+        display: none;
+      }
+
+      .nav {
+        &-list {
+          width: 270px;
+          height: 735px;
+          padding-top: 40px;
+          background-color: #f3f5f8;
+        }
+
+        &-item {
+          display: flex;
+          height: 62px;
+          background-color: #f3f5f8;
+
+          &.on {
+            .nav-title {
+              color: #fff;
+              background-color: #2e81f8;
+              font-weight: bold;
+            }
+
+            .depth1-menu {
+              display: flex;
+            }
+          }
+        }
+
+        &-title {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+          padding: 0 15px;
+          font-size: 24px;
+          color: #0b0d0f;
+        }
+      }
+
+      .depth1 {
+        &-menu {
+          display: none;
+          flex-wrap: wrap;
+          gap: 46px;
+          position: absolute;
+          top: 0px;
+          left: 270px;
+          width: 700px;
+          padding: 0 63px;
+
+        }
+
+        &-list {
+          width: 268px;
+          height: fit-content;
+        }
+
+        &-item {
+          font-size: 18px;
+          font-weight: bold;
+          position: relative;
+          display: flex;
+          align-items: center;
+          line-height: 20px;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #b7b7b7;
+          }
+
+        }
+
+        &-title[role="button"] {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: transparent;
+          border: 0;
+          text-align: left;
+          padding-bottom: 13px;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 13%;
+            background: url("../assets/btn_arrow_up.png") no-repeat;
+            transform: rotate(180deg);
+            width: 16px;
+            height: 10px;
+          }
+        }
+      }
+
+      .flex-box {
+        display: flex;
+        gap: 40px;
+
+        &:nth-child(1) {
+          padding-top: 60px;
+
+        }
+
+        &.on {
+          .depth2-list {
+            display: block;
+          }
+
+          .depth1-title[role="button"] {
+            &::after {
+              transform: rotate(0deg);
+            }
+          }
+        }
+
+        .depth2-list {
+          display: none;
+        }
+      }
+
+      .favorite-menu {
+        position: absolute;
+        right: 0;
+        padding-top: 40px;
+        background: rgb(154, 192, 157);
+        width: calc(100% - 270px - 700px);
+        height: 100%;
+
+        .title {
+          color: #202020;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 21px;
+        }
+      }
+    }
+  }
+
+  .search-chatbot-area {
     display: none;
 
     &.on {
@@ -176,7 +332,7 @@
         }
       }
 
-      input {
+      .input {
         display: block;
         width: calc(100% - 64px);
         background: transparent;
@@ -199,23 +355,22 @@
         &::-webkit-search-results-decoration {
           display: none;
         }
-      }
 
-      .input-clear {
-        display: none;
-        position: absolute;
-        top: 50%;
-        right: 30px;
-        transform: translateY(-50%);
-        width: 33px;
-        height: 38px;
-        background: #f00;
-        border: 0;
-        background: url("../assets/btn_input_del.png") no-repeat;
-        background-position: center;
+        &-clear {
+          display: none;
+          position: absolute;
+          top: 50%;
+          right: 30px;
+          transform: translateY(-50%);
+          width: 33px;
+          height: 38px;
+          border: 0;
+          background: url("../assets/btn_input_del.png") no-repeat;
+          background-position: center;
 
-        &.on {
-          display: block;
+          &.on {
+            display: block;
+          }
         }
       }
     }
