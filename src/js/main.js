@@ -53,9 +53,10 @@
   ScrollTrigger.create({
     trigger: ".section-event .left-area",
     pin: true,
-    markers:false,
+    markers:true,
     start: "top 162px",
-    end: "bottom 65%",
+    end: "bottom 615px",
+  
   });
   
   const boardSwiper = new Swiper('.section-board .swiper', {
@@ -214,7 +215,7 @@ const navList = document.querySelector(".gnb .nav-list")
 const navItems = document.querySelectorAll(".gnb .nav-item")
 const depth1Menu = document.querySelectorAll(".gnb .depth1-menu")
 
-navList.onclick = (e) => {
+navList.onmouseover = (e) => {
   if(!e.target.matches('.nav-list .nav-item > a')) return;
   e.preventDefault()
   navItemOn(e.target.parentNode)
@@ -252,54 +253,59 @@ const onFlexBox = (target) => {
   }
 }
 
-
+const dimmed = document.querySelector(".dimmed")
+const wrapper = document.querySelector(".wrapper")
+const innerGnb = document.querySelector(".gnb > div")
+const innerChatbot = document.querySelector(".search-chatbot-area > div")
 
 btnSearch.onclick = (e) => {
   e.preventDefault();
-  searchChatbotArea.classList.toggle("on")
-  e.target.classList.toggle("close")
-  menu.classList.toggle("none")
+  console.log('돋보기버튼 누름');
+  searchChatbotArea.classList.add("on")
+  e.target.classList.add("close")
+  dimmed.classList.add("on")
+  menu.classList.add("none")
+
 }
+
 searchAreaInput.onkeyup = (e) => {
-  console.log(e.target.value);
   if(e.target.value){
     inputClearBtn.classList.add("on")
   }else{
     inputClearBtn.classList.remove("on")
   }
 }
+
 inputClearBtn.onclick = ()  => {
   searchAreaInput.value = ""
 }
 
-
-const dimmed = document.querySelector(".dimmed")
-
 btnMenu.onclick = (e) => {
   e.preventDefault();
-  // console.log('메뉴버튼 클릭');
-  gnb.classList.toggle("on")
+  console.log('버거버튼 누름');
+  gnb.classList.add("on")
   dimmed.classList.add("on")
+  menu.classList.add("none")
 }
-
-const wrapper = document.querySelector(".wrapper")
-const innerGnb = document.querySelector(".gnb > div")
-
-
 
 
 wrapper.onclick = (e) => {
-  if(dimmed.classList.contains("on")){
-      console.log('gnb가 열림');
-    if(!innerGnb.contains(e.target)){
-     console.log('gnb가 눌린게 아님');
-    }else{
-       console.log('gnb가 눌림');
+  e.preventDefault();
+  if(innerGnb.contains(e.target) || innerChatbot.contains(e.target)) return
+  if(btnMenu.contains(e.target)){
+    if(searchChatbotArea.classList.contains("on")){
+      searchChatbotArea.classList.remove("on")
     }
-
+  }else if(btnSearch.contains(e.target)){
+    if(gnb.classList.contains("on")){
+      gnb.classList.remove("on")
+      searchChatbotArea.classList.add("on")
+    }
   }else{
-    console.log('gnb가 안열림');
+    dimmed.classList.remove("on")
+    gnb.classList.remove("on")
+    menu.classList.remove("none")
+    searchChatbotArea.classList.remove("on")
   }
 }
-
 

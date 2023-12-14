@@ -10,6 +10,13 @@
     z-index: 3;
   }
 
+  &.on {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+  }
+
   .background {
     background: #fff;
   }
@@ -20,7 +27,7 @@
     &::before {
       content: '';
       display: block;
-      width: 1224px;
+      max-width: 1224px;
       height: 88px;
     }
 
@@ -144,13 +151,12 @@
   .gnb {
     display: none;
 
-
     &.on {
       display: block;
     }
 
     .inner {
-      display: flex;
+      position: relative;
       background: #fff;
 
       &::before {
@@ -204,7 +210,6 @@
           left: 270px;
           width: 700px;
           padding: 0 63px;
-
         }
 
         &-list {
@@ -229,28 +234,86 @@
             height: 1px;
             background-color: #b7b7b7;
           }
-
         }
 
-        &-title[role="button"] {
-          display: block;
-          width: 100%;
-          height: 100%;
-          background: transparent;
-          border: 0;
-          text-align: left;
+        &-title {
           padding-bottom: 13px;
 
-          &::after {
-            content: "";
+          &[role="button"] {
             display: block;
-            position: absolute;
-            right: 0;
-            top: 13%;
-            background: url("../assets/btn_arrow_up.png") no-repeat;
-            transform: rotate(180deg);
-            width: 16px;
-            height: 10px;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: 0;
+            text-align: left;
+
+            &::after {
+              content: "";
+              display: block;
+              position: absolute;
+              right: 0;
+              top: 13%;
+              background: url("../assets/btn_arrow_up.png") no-repeat;
+              transform: rotate(180deg);
+              width: 16px;
+              height: 10px;
+            }
+
+            &:hover {
+              &::after {
+                background: url("../assets/btn_arrow_up_blue.png") no-repeat;
+              }
+            }
+          }
+
+          &[role="link"] {
+            width: 100%;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+
+            &::after {
+              content: "";
+              display: block;
+              background: url("../assets/ico_allmenu.png") no-repeat scroll 0 -354px rgba(0, 0, 0, 0);
+              width: 16px;
+              height: 16px;
+            }
+          }
+
+          &.qna {
+            &:hover {
+              color: #2e81f8;
+            }
+          }
+        }
+      }
+
+      .depth2 {
+        &-list {
+          display: none;
+        }
+
+        &-item {
+          &:hover {
+            color: #2e81f8;
+          }
+        }
+
+        &-title {
+          &[role="link"] {
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            &::after {
+              content: "";
+              display: block;
+              background: url("../assets/ico_allmenu.png") no-repeat scroll 0 -354px rgba(0, 0, 0, 0);
+              width: 16px;
+              height: 16px;
+            }
           }
         }
       }
@@ -261,12 +324,14 @@
 
         &:nth-child(1) {
           padding-top: 60px;
-
         }
 
         &.on {
           .depth2-list {
-            display: block;
+            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
           }
 
           .depth1-title[role="button"] {
@@ -275,27 +340,58 @@
             }
           }
         }
+      }
 
-        .depth2-list {
-          display: none;
+      .favorite {
+        &-menu {
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: flex;
+          flex-direction: column;
+          width: calc(100% - 270px - 700px);
+          height: 100%;
+          background-color: #f3f5f8;
+          padding: 60px 20px;
+
+          .title {
+            color: #202020;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 21px;
+            margin-bottom: 20px;
+          }
+        }
+
+        &-list {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        &-item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-bottom: 15px;
+          border-bottom: 1px solid #e0e0e0;
+
+          &::after {
+            content: "";
+            display: block;
+            background: url("../assets/faver_arr_onw_b.png") no-repeat;
+            width: 7px;
+            height: 12px;
+          }
+        }
+
+        &-banner {
+          display: flex;
+          justify-content: center;
+          margin-top: auto;
         }
       }
 
-      .favorite-menu {
-        position: absolute;
-        right: 0;
-        padding-top: 40px;
-        background: rgb(154, 192, 157);
-        width: calc(100% - 270px - 700px);
-        height: 100%;
-
-        .title {
-          color: #202020;
-          font-size: 16px;
-          font-weight: bold;
-          line-height: 21px;
-        }
-      }
     }
   }
 
@@ -390,7 +486,6 @@
         gap: 47px;
         max-width: 696px;
         margin: 0 auto;
-        background: #ff0;
         padding: 55px 60px 75px;
 
         .title {

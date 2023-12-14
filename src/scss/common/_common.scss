@@ -13,14 +13,14 @@
 }
 
 .inner {
-  width: 1224px;
+  max-width: 1224px;
   margin: 0 auto;
 }
 
 .dimmed {
   position: fixed;
   left: 0;
-  top: 0;
+  top: 50px;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;

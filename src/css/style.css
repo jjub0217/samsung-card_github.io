@@ -85,14 +85,14 @@ ul {
 }
 
 .inner {
-  width: 1224px;
+  max-width: 1224px;
   margin: 0 auto;
 }
 
 .dimmed {
   position: fixed;
   left: 0;
-  top: 0;
+  top: 50px;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -131,6 +131,12 @@ ul {
   right: 0;
   z-index: 3;
 }
+.header.on {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+}
 .header .background {
   background: #fff;
 }
@@ -140,7 +146,7 @@ ul {
 .header .inner::before {
   content: "";
   display: block;
-  width: 1224px;
+  max-width: 1224px;
   height: 88px;
 }
 .header .inner .group-flex {
@@ -247,7 +253,7 @@ ul {
   display: block;
 }
 .header .gnb .inner {
-  display: flex;
+  position: relative;
   background: #fff;
 }
 .header .gnb .inner::before {
@@ -313,6 +319,9 @@ ul {
   height: 1px;
   background-color: #b7b7b7;
 }
+.header .gnb .inner .depth1-title {
+  padding-bottom: 13px;
+}
 .header .gnb .inner .depth1-title[role=button] {
   display: block;
   width: 100%;
@@ -320,7 +329,6 @@ ul {
   background: transparent;
   border: 0;
   text-align: left;
-  padding-bottom: 13px;
 }
 .header .gnb .inner .depth1-title[role=button]::after {
   content: "";
@@ -333,6 +341,44 @@ ul {
   width: 16px;
   height: 10px;
 }
+.header .gnb .inner .depth1-title[role=button]:hover::after {
+  background: url("../assets/btn_arrow_up_blue.png") no-repeat;
+}
+.header .gnb .inner .depth1-title[role=link] {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.header .gnb .inner .depth1-title[role=link]::after {
+  content: "";
+  display: block;
+  background: url("../assets/ico_allmenu.png") no-repeat scroll 0 -354px rgba(0, 0, 0, 0);
+  width: 16px;
+  height: 16px;
+}
+.header .gnb .inner .depth1-title.qna:hover {
+  color: #2e81f8;
+}
+.header .gnb .inner .depth2-list {
+  display: none;
+}
+.header .gnb .inner .depth2-item:hover {
+  color: #2e81f8;
+}
+.header .gnb .inner .depth2-title[role=link] {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.header .gnb .inner .depth2-title[role=link]::after {
+  content: "";
+  display: block;
+  background: url("../assets/ico_allmenu.png") no-repeat scroll 0 -354px rgba(0, 0, 0, 0);
+  width: 16px;
+  height: 16px;
+}
 .header .gnb .inner .flex-box {
   display: flex;
   gap: 40px;
@@ -341,27 +387,55 @@ ul {
   padding-top: 60px;
 }
 .header .gnb .inner .flex-box.on .depth2-list {
-  display: block;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 .header .gnb .inner .flex-box.on .depth1-title[role=button]::after {
   transform: rotate(0deg);
 }
-.header .gnb .inner .flex-box .depth2-list {
-  display: none;
-}
 .header .gnb .inner .favorite-menu {
   position: absolute;
+  top: 0;
   right: 0;
-  padding-top: 40px;
-  background: rgb(154, 192, 157);
+  display: flex;
+  flex-direction: column;
   width: calc(100% - 270px - 700px);
   height: 100%;
+  background-color: #f3f5f8;
+  padding: 60px 20px;
 }
 .header .gnb .inner .favorite-menu .title {
   color: #202020;
   font-size: 16px;
   font-weight: bold;
   line-height: 21px;
+  margin-bottom: 20px;
+}
+.header .gnb .inner .favorite-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.header .gnb .inner .favorite-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.header .gnb .inner .favorite-item::after {
+  content: "";
+  display: block;
+  background: url("../assets/faver_arr_onw_b.png") no-repeat;
+  width: 7px;
+  height: 12px;
+}
+.header .gnb .inner .favorite-banner {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
 }
 .header .search-chatbot-area {
   display: none;
@@ -444,7 +518,6 @@ ul {
   gap: 47px;
   max-width: 696px;
   margin: 0 auto;
-  background: #ff0;
   padding: 55px 60px 75px;
 }
 .header .search-chatbot-area .chatbot-area .title {
@@ -1364,7 +1437,7 @@ main > * + * {
 }
 .grid-area1.section-event .left-area .event-item a .text-box {
   text-align: center;
-  padding: 35px 0;
+  padding: 24px 0 36px 0;
 }
 .grid-area1.section-event .left-area .event-item a .text-box .title {
   font-weight: bold;
