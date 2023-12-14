@@ -349,7 +349,7 @@
   ScrollTrigger.create({
     trigger: ".section-event .left-area",
     pin: true,
-    markers:true,
+    markers:false,
     start: "top 162px",
     end: "bottom 615px",
   
