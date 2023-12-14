@@ -1,4 +1,25 @@
 
+var frameWidth = 70;
+var frameHeight = 88;
+var framesPerRow = 14; 
+var numRows = 11; 
+var totalFrames = framesPerRow * numRows; 
+var currentFrame = 0;
+
+
+function animateSprite() {
+  var currentRow = Math.floor(currentFrame / framesPerRow);
+  var currentColumn = currentFrame % framesPerRow;
+  
+  var posX = -(currentColumn * frameWidth); 
+  var posY = -(currentRow * frameHeight); 
+
+  document.querySelector('.chatBot button').style.backgroundPosition = `${posX}px ${posY}px`;
+  currentFrame = (currentFrame + 1) % totalFrames;
+}
+
+setInterval(animateSprite, 50);
+
   const topBannerArea = document.querySelector(".top-banner");
   const bannerClose = document.querySelector(".banner-closeBtn");
 

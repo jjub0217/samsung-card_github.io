@@ -120,6 +120,41 @@ ul {
     height: 0px;
   }
 }
+.chatBot {
+  position: fixed;
+  right: 29px;
+  bottom: 11px;
+  width: 70px;
+  height: 88px;
+  z-index: 100;
+  background: url("../assets/70x88_6.png") no-repeat;
+  cursor: pointer;
+  background-position: -280px -880px;
+}
+.chatBot .btn {
+  border: 1px solid;
+  border: 0;
+  width: 70px;
+  height: 88px;
+  background: url("../assets/70x88_6.png") no-repeat;
+  background-position: -280px -880px;
+}
+.chatBot .closeBtn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 2px;
+  line-height: 0;
+  z-index: 101;
+  background: url("../assets/bg_button_chatbot_close.png") no-repeat;
+  background-size: cover;
+  border: 0;
+  cursor: pointer;
+}
+
 .header {
   position: relative;
   z-index: 3;
