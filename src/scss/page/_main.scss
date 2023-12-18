@@ -2,6 +2,29 @@ main>*+* {
   margin-top: 24px;
 }
 
+.mobile-headline {
+  display: none;
+
+  .mobile & {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: #111111;
+    font-weight: bold;
+    line-height: 18px;
+    margin-bottom: 16px;
+
+    &::after {
+      content: "";
+      display: block;
+      background: url("../assets/new_2203_r_arrow.png") no-repeat;
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
 .top-banner {
   display: flex;
   align-items: center;
@@ -10,6 +33,10 @@ main>*+* {
   position: relative;
   height: 50px;
   background: #2090ff;
+
+  .mobile & {
+    display: none;
+  }
 
   &.on {
     height: 0px;
@@ -60,15 +87,95 @@ main>*+* {
 .container {
   overflow: hidden;
 
+  .mobile & {
+    margin-top: 45px;
+  }
+
+  &.scrollTop {
+    margin-top: 162px;
+  }
+
   .group-flex {
     display: flex;
     justify-content: space-between;
     height: 462px;
+
+    .mobile & {
+      height: 589px;
+    }
+  }
+}
+
+.section-appBanner {
+  display: none;
+
+  .mobile & {
+    display: block;
+    position: relative;
+    background: linear-gradient(to bottom, #fff, #fefdff 23%, #e6eaf3 60%, #fff 93%);
+    height: 184px;
+    padding-top: 32px;
+
+    .inner {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 32px;
+      color: #000;
+    }
+
+    a {
+      display: block;
+
+      .down-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 108px;
+        height: 32px;
+        font-size: 13px;
+        line-height: 32px;
+        border-radius: 6px;
+        background-color: #2090ff;
+        color: #fff;
+        padding: 5px 15px;
+
+        &::before {
+          content: "";
+          display: block;
+          background: url("../assets/2023-12-17T161126.png")no-repeat;
+          width: 14px;
+          height: 14px;
+          background-size: cover;
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 18px;
+      right: 0;
+      background: url("../assets/new_2204_my_main_visual_m.png") no-repeat;
+      width: 158px;
+      height: 189px;
+      background-size: cover;
+    }
   }
 }
 
 .section-visual {
   width: 66%;
+
+  .mobile & {
+    width: 100%;
+  }
 
   .swiper {
     height: 100%;
@@ -78,18 +185,46 @@ main>*+* {
     &-slide {
       height: 100%;
       max-height: 462px;
+      border-radius: 16px;
 
+      .mobile & {
+        height: 100%;
+        max-height: 589px;
+      }
 
       .image-box {
         position: relative;
         padding-bottom: calc((634/1110)*100%);
+        border-radius: 16px;
 
-        img {
+        .mobile & {
+          padding-bottom: calc((554/734)*100%);
+
+          img.pc {
+            display: none;
+          }
+
+          img.mo {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+          }
+        }
+
+        img.pc {
           width: 100%;
           object-fit: cover;
           position: absolute;
           top: 0;
         }
+
+        img.mo {
+          display: none;
+        }
+
+
       }
 
       &:nth-child(3) {
@@ -106,12 +241,22 @@ main>*+* {
         top: 60px;
         left: 52px;
         color: #fff;
+
+        .mobile & {
+          top: 31px;
+          left: 24px;
+        }
       }
 
       .title {
         font-size: 36px;
         font-weight: bold;
         line-height: 1.33;
+
+        .mobile & {
+          font-size: 24px;
+          line-height: 32px;
+        }
       }
 
       .desc {
@@ -119,6 +264,11 @@ main>*+* {
         font-weight: 500;
         line-height: 18px;
         margin-top: 10px;
+
+        .mobile & {
+          font-size: 12px;
+          line-height: 14px;
+        }
       }
     }
 
@@ -129,6 +279,10 @@ main>*+* {
       z-index: 1;
       display: flex;
       align-items: center;
+
+      .mobile & {
+        left: 24px;
+      }
 
       .pagination {
         .swiper-pagination-bullet {
@@ -179,6 +333,10 @@ main>*+* {
   border: 1px solid #e2e5eb;
   border-radius: 16px;
   padding: 24px 17px;
+
+  .mobile & {
+    display: none;
+  }
 
   .auth {
     &-list {
@@ -435,10 +593,20 @@ main>*+* {
   padding: 25px;
   position: relative;
 
+  .mobile & {
+    margin-top: 52px;
+    border: 0;
+    padding: 0;
+  }
+
   .tab {
     &-list {
       display: flex;
       align-items: center;
+
+      .mobile & {
+        display: none;
+      }
     }
 
     &-item {
@@ -469,6 +637,10 @@ main>*+* {
     position: relative;
     padding: 0px 45px 10px;
     margin-top: 50px;
+
+    .mobile & {
+      display: none;
+    }
 
     .swiper {
       padding-top: 32px;
@@ -580,6 +752,57 @@ main>*+* {
     }
   }
 
+  .mobileContent {
+    display: none;
+
+    .mobile & {
+      display: block;
+      position: relative;
+    }
+
+    .card-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .image-box {
+        position: relative;
+        max-width: 90px;
+      }
+
+      .badge {
+        background-color: #ff3289;
+        padding: 4px 8px 4px;
+        border-radius: 28px;
+        font-size: 12px;
+        line-height: 12px;
+        color: #fff;
+        width: fit-content;
+        margin-top: 16px;
+      }
+
+      .text-box {
+        display: flex;
+        flex-direction: column;
+        width: 142px;
+        gap: 8px;
+
+        .title {
+          color: #111111;
+          line-height: 20px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+        .desc {
+          font-size: 14px;
+          color: #666;
+          @include ellipse(2);
+        }
+      }
+    }
+  }
+
   .more {
     &-list {
       display: flex;
@@ -588,6 +811,11 @@ main>*+* {
       position: absolute;
       top: 18px;
       right: 25px;
+
+      .mobile & {
+        top: -7px;
+        right: 0;
+      }
     }
 
     &-item {
@@ -605,8 +833,23 @@ main>*+* {
       &:hover {
         background: #dbe2f3;
       }
+
+      &:last-child {
+        display: none;
+
+        .mobile & {
+          display: block;
+        }
+      }
+
+      .mobile & {
+        &:not(&:last-child) {
+          display: none;
+        }
+      }
     }
   }
+
 }
 
 .grid-area1 {
@@ -615,6 +858,10 @@ main>*+* {
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: 274px;
   gap: 20px;
+
+  .mobile & {
+    display: none;
+  }
 
   .section-finance,
   .section-shopping {
@@ -743,6 +990,7 @@ main>*+* {
   &.section-event {
     grid-template-rows: 890px;
     max-width: initial;
+
 
     .left-area {
       grid-column: span 7;
@@ -904,7 +1152,145 @@ main>*+* {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   gap: 25px;
+
+  .mobile & {
+    display: none;
+  }
 }
+
+.section-findCard {
+  display: none;
+
+  .mobile & {
+    display: block;
+    margin-top: 52px;
+  }
+
+  .image-box {
+    border-radius: 12px;
+    overflow: auto;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.section-finance.mobile {
+  display: none;
+
+  .mobile & {
+    display: block;
+    margin-top: 52px;
+  }
+
+  .mobile-headline::after {
+    display: none;
+  }
+
+  .finance {
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      height: 92px;
+      border-radius: 16px;
+      background-color: #f4f6fb;
+      padding: 0 24px;
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .image-box {
+        width: 36px;
+      }
+
+      .text-box {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .desc {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+
+        strong {
+          font-weight: bold;
+        }
+
+        span {
+          &:nth-child(2) {
+            display: flex;
+            align-items: center;
+
+            &::before {
+              content: '';
+              display: block;
+              margin: 0 8px;
+              width: 1px;
+              height: 12px;
+              background: #e2e5db;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.section-event.mobile {
+  display: none;
+
+  .mobile & {
+    display: block;
+  }
+
+  margin-top: 52px;
+  padding: 43px 23px 76px 24px;
+  border-radius: 12px;
+  background: #e6ebff;
+  position: relative;
+
+  .mobile-headline {
+    font-size: 20px;
+    line-height: 27px;
+    color: #111111;
+    margin: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 17px;
+    right: 23px;
+    background: url("../assets/new_2204_eve_banner.png") no-repeat;
+    width: 120px;
+    height: 122px;
+    background-size: cover;
+  }
+}
+
 
 .section-notice,
 .section-customer,
@@ -999,6 +1385,43 @@ main>*+* {
       &.tel {
         &::before {
           background: url("../assets/i_customer_tel.png") no-repeat center / contain;
+        }
+      }
+    }
+  }
+
+  &.mobile {
+    display: none;
+
+    .mobile & {
+      margin-top: 52px;
+      display: block;
+      border: 0;
+      padding: 0;
+      height: auto;
+
+      .mobile-headline::after {
+        display: none;
+      }
+    }
+
+    .service {
+      &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      &-item {
+        background-color: #f4f6fb;
+        color: #111;
+        font-size: 14px;
+        height: 42px;
+        line-height: 42px;
+        border-radius: 12px;
+
+        &::before {
+          display: none;
         }
       }
     }
