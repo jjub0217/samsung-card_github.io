@@ -63,7 +63,7 @@ function samsungCardUI () {
 
   const cardSwiperMobile = new Swiper('.section-cards #mobile .swiper', {
     cssMode: true,
-    slidesPerView: 6,
+    slidesPerView: "auto",
     mousewheel: true,
     keyboard: true,
     spaceBetween: 20,
@@ -415,11 +415,15 @@ function samsungCardUI () {
     wrapper.classList.add("mobile")
     console.log(wrapper);
     const btnMenu = document.querySelector(".btn-menu ") 
-    console.log(btnMenu);
     const moGnbCloseBtn = document.querySelector(".mo_gnb-close")
     const moGnb = document.querySelector(".mo_gnb")
-    console.log(moGnbCloseBtn);
+
+    
     btnMenu.onclick = (e) => {
+      console.log('버거버튼 클릭');
+      moGnb.classList.add("on")
+    }
+    moGnbCloseBtn.onclick = (e) => {
       moGnb.classList.add("on")
     }
 

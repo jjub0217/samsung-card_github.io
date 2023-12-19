@@ -760,6 +760,10 @@ main>*+* {
       position: relative;
     }
 
+    .swiper-slide {
+      width: 142px !important;
+    }
+
     .card-item {
       display: flex;
       flex-direction: column;

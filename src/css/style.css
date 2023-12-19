@@ -151,7 +151,7 @@ ul {
   height: 88px;
   background: url("../assets/70x88_6.png") no-repeat;
   background-position: -280px -880px;
-  z-index: 100;
+  z-index: 3;
 }
 .chatBot .closeBtn {
   position: absolute;
@@ -633,14 +633,21 @@ ul {
   display: none;
 }
 .mobile .header .mo_gnb {
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  display: block;
+  width: 100%;
   background: #fff;
-  height: 100%;
-  overflow-y: scroll;
+  height: 100vh;
+  z-index: 4;
+  transform: translateY(-110%);
+  transition: all 0.5s 0.5s;
+  overflow-y: auto;
+}
+.mobile .header .mo_gnb.on {
+  transform: none;
 }
 .mobile .header .mo_gnb .inner {
   padding-bottom: 56px;
@@ -983,6 +990,7 @@ ul {
 .footer .info2-area.mobile .info2-list {
   justify-content: space-between;
   border-bottom: 1px solid #d3d5da;
+  position: relative;
 }
 .footer .info2-area.mobile .info2-list .address-info {
   padding: 0;
@@ -1044,6 +1052,8 @@ ul {
   color: #575b63;
 }
 .footer .info2-area.mobile .info2-item:nth-child(2) {
+  position: absolute;
+  right: 0;
   display: flex;
   align-self: baseline;
   font-size: 13px;
@@ -1882,6 +1892,9 @@ main > * + * {
 .mobile .section-cards .mobileContent {
   display: block;
   position: relative;
+}
+.section-cards .mobileContent .swiper-slide {
+  width: 142px !important;
 }
 .section-cards .mobileContent .card-item {
   display: flex;

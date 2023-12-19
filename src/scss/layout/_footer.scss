@@ -214,8 +214,9 @@
         .info2 {
           &-list {
             justify-content: space-between;
-
             border-bottom: 1px solid #d3d5da;
+            position: relative;
+
 
             .address {
               &-info {
@@ -296,6 +297,8 @@
             color: #575b63;
 
             &:nth-child(2) {
+              position: absolute;
+              right: 0;
               display: flex;
               align-self: baseline;
               font-size: 13px;
