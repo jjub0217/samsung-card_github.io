@@ -393,23 +393,17 @@ ul {
 }
 .header .gnb .inner .depth1-item {
   font-size: 18px;
-  font-weight: bold;
   position: relative;
-  display: flex;
   align-items: center;
   line-height: 20px;
-}
-.header .gnb .inner .depth1-item::after {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #b7b7b7;
+  display: flex;
+  flex-direction: column;
 }
 .header .gnb .inner .depth1-title {
+  width: 100%;
   padding-bottom: 13px;
+  font-weight: bold;
+  border-bottom: 1px solid #b7b7b7;
 }
 .header .gnb .inner .depth1-title[role=button] {
   display: block;
@@ -418,13 +412,14 @@ ul {
   background: transparent;
   border: 0;
   text-align: left;
+  border-bottom: 1px solid #b7b7b7;
 }
 .header .gnb .inner .depth1-title[role=button]::after {
   content: "";
   display: block;
   position: absolute;
   right: 0;
-  top: 13%;
+  top: 3%;
   background: url("../assets/btn_arrow_up.png") no-repeat;
   transform: rotate(180deg);
   width: 16px;
@@ -438,6 +433,7 @@ ul {
   display: flex;
   gap: 5px;
   align-items: center;
+  border-bottom: 1px solid #b7b7b7;
 }
 .header .gnb .inner .depth1-title[role=link]::after {
   content: "";
@@ -476,6 +472,8 @@ ul {
   padding-top: 60px;
 }
 .header .gnb .inner .flex-box.on .depth2-list {
+  width: 100%;
+  font-size: 16px;
   padding-top: 10px;
   display: flex;
   flex-direction: column;
@@ -1579,6 +1577,12 @@ main > * + * {
 }
 .section-auth .auth-contents {
   padding: 30px 17px 0 17px;
+}
+.section-auth .auth-contents .content {
+  display: none;
+}
+.section-auth .auth-contents .content.on {
+  display: block;
 }
 .section-auth .auth-contents .card,
 .section-auth .auth-contents .cert1,

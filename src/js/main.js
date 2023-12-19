@@ -169,7 +169,6 @@ function samsungCardUI () {
 
   window.onscroll = () => {
     let curr =  window.scrollY
-    console.log(curr);
     if(deviceMode === "desktop"){
       console.log('데스크탑');
       if(curr > 50){
@@ -209,9 +208,11 @@ function samsungCardUI () {
     const navList = document.querySelector(".gnb .nav-list")
     const depth1Menu = document.querySelectorAll(".gnb .depth1-menu")
     const authTabList= document.querySelector('.section-auth .auth-list');
+    const authContents= document.querySelector('.section-auth .auth-contents');
+
     const authIdSave = document.querySelector('.form .save') ?? ""
     const authIdSaveBtn = document.querySelector('.form .save button')
-    const authContents = document.querySelectorAll('.auth-contents .on')
+    // const authContents = document.querySelectorAll('.auth-contents .on')
     const joinText = document.querySelector('.join-text')
     const cardTabList = document.querySelector('.section-cards .tab-list')
     const family = document.querySelector('.family');
@@ -241,7 +242,7 @@ function samsungCardUI () {
     }
 
     const render = () => {
-      let loginAreas = [...authContents];
+      let loginAreas = [...authContents.children];
       const targetId = authTabList.querySelector('.on').id;
       loginAreas.filter(area => {
         if(targetId === area.id){
@@ -265,12 +266,13 @@ function samsungCardUI () {
       })
     }
 
-    const tabAuthMove = (target) =>{
-      [...authTabList.children].forEach(authItem => {
-        if(authItem === target){
-            authItem.classList.add('on');
+    const tabAuthMove = (dataset) =>{
+      const authContent = document.querySelector(dataset);
+      [...authContents.children].forEach(authItem => {
+        if(authItem === authContent){
+          authItem.classList.add('on');
         }else{
-            authItem.classList.remove('on');
+          authItem.classList.remove('on');
         }
       })
     }
@@ -305,8 +307,6 @@ function samsungCardUI () {
     }
 
     // 윈도우에 이벤트 추가하는 함수 (데스크탑 전용)
-  
-
     navList.onmouseover = (e) => {
       if(!e.target.matches('.nav-list .nav-item > a')) return;
       e.preventDefault()
@@ -316,7 +316,9 @@ function samsungCardUI () {
     depth1Menu.forEach(depth1Menu => {
       depth1Menu.onclick = (e) => {
         e.preventDefault()
-        if(!e.target.matches('.depth1-item > button')) return;
+        console.log(e.target); // a
+        console.log(e.target.parentNode.parentNode.parentNode); // flex-box
+        if(!e.target.matches('.depth1-item > .depth1-title')) return;
         onFlexBox(e.target.parentNode.parentNode.parentNode)
       }
     }) 
@@ -383,7 +385,8 @@ function samsungCardUI () {
 
     authTabList.onclick = (e) => {
       if ( !e.target.matches('.auth-list > .auth-item')) return;
-      tabAuthMove(e.target);
+      console.log(e.target.dataset);
+      tabAuthMove(e.target.dataset.tab);
       render()
     }
 

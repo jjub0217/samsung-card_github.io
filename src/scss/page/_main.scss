@@ -371,6 +371,14 @@ main>*+* {
     &-contents {
       padding: 30px 17px 0 17px;
 
+      .content {
+        display: none;
+
+        &.on {
+          display: block;
+        }
+      }
+
       // card, id, cert1, cert2
       .card,
       .cert1,
