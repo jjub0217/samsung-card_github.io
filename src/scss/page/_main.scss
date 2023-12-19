@@ -31,6 +31,7 @@ main>*+* {
   justify-content: center;
   gap: 24px;
   position: relative;
+  z-index: 3;
   height: 50px;
   background: #2090ff;
 
@@ -44,6 +45,12 @@ main>*+* {
     animation-duration: 0.5s;
     overflow: hidden;
   }
+
+  &.none {
+    display: none;
+  }
+
+
 
   .text {
     font-size: 16px;
@@ -86,13 +93,10 @@ main>*+* {
 
 .container {
   overflow: hidden;
+  padding-top: 262px;
 
   .mobile & {
     margin-top: 45px;
-  }
-
-  &.scrollTop {
-    margin-top: 162px;
   }
 
   .group-flex {

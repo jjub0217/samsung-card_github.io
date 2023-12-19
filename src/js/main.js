@@ -6,8 +6,8 @@ function samsungCardUI () {
   // 데스크탑, 모바일 모두 적용 DOM요소에 참조한 변수들
   let wrapper  = document.querySelector(".wrapper") 
   const topBannerArea = document.querySelector(".top-banner");
+  const gnb = document.querySelector(".gnb")
   const appDown = document.querySelector(".appDown")
-  console.log(appDown);
   const container = document.querySelector(".container")
   const chatBot = document.querySelector('.chatBot')
   const chatBotBtn = document.querySelector('.chatBot .btn')
@@ -169,14 +169,17 @@ function samsungCardUI () {
 
   window.onscroll = () => {
     let curr =  window.scrollY
+    console.log(curr);
     if(deviceMode === "desktop"){
       console.log('데스크탑');
       if(curr > 50){
-        header.classList.add("scrollTop")
         container.classList.add("scrollTop")
+        if(!gnb.classList.contains("on")){
+          topBannerArea.classList.add("none")
+        }
       }else{
-        header.classList.remove("scrollTop")
         container.classList.remove("scrollTop")
+        topBannerArea.classList.remove("none")
       }
     }else{
       console.log('모바일');
@@ -193,7 +196,6 @@ function samsungCardUI () {
 
     console.log('데스크탑');
     wrapper.classList.remove("mobile")
-    console.log(wrapper);
 
     const dimmed = document.querySelector(".dimmed")
     const bannerClose = document.querySelector(".banner-closeBtn");
@@ -201,7 +203,7 @@ function samsungCardUI () {
     const searchChatbotArea = document.querySelector(".search-chatbot-area")
     const searchAreaInput = document.querySelector(".search-area input")
     const inputClearBtn = document.querySelector(".input-clear")
-    const gnb = document.querySelector(".gnb")
+ 
     const innerGnb = document.querySelector(".gnb > div")
     const innerChatbot = document.querySelector(".search-chatbot-area > div")
     const navList = document.querySelector(".gnb .nav-list")
@@ -322,10 +324,11 @@ function samsungCardUI () {
     btnSearch.onclick = (e) => {
       e.preventDefault();
       console.log('돋보기버튼 누름');
-      searchChatbotArea.classList.add("on")
-      e.target.classList.add("close")
-      dimmed.classList.add("on")
-      menu.classList.add("none")
+      e.target.classList.toggle("close")
+      searchChatbotArea.classList.toggle("on")
+      dimmed.classList.toggle("on")
+      menu.classList.toggle("none")
+      header.classList.toggle("fixed")
     }
 
     searchAreaInput.onkeyup = (e) => {
@@ -343,9 +346,11 @@ function samsungCardUI () {
     btnMenu.onclick = (e) => {
       e.preventDefault();
       console.log('버거버튼 누름');
-      gnb.classList.add("on")
-      dimmed.classList.add("on")
-      menu.classList.add("none")
+      e.target.classList.toggle("close")
+      gnb.classList.toggle("on")
+      dimmed.classList.toggle("on")
+      menu.classList.toggle("none")
+      header.classList.toggle("fixed")
     }
 
     /** 
@@ -369,6 +374,10 @@ function samsungCardUI () {
         gnb.classList.remove("on")
         menu.classList.remove("none")
         searchChatbotArea.classList.remove("on")
+        topBannerArea.classList.remove("none")
+        header.classList.remove("fixed")
+        btnSearch.classList.remove("close")
+        btnMenu.classList.remove("close")
       }
     }
 

@@ -82,6 +82,7 @@ ul {
 
 .wrapper {
   min-width: 1140px;
+  position: relative;
 }
 .wrapper .inner {
   max-width: 1224px;
@@ -96,13 +97,13 @@ ul {
 }
 
 .dimmed {
-  position: fixed;
+  position: absolute;
   left: 0;
-  top: 50px;
+  top: 0;
+  bottom: 0;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height: 100vh;
   display: none;
 }
 .dimmed.on {
@@ -169,12 +170,15 @@ ul {
   cursor: pointer;
 }
 
-.header.scrollTop {
+.header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 3;
+}
+.header.fixed {
+  position: absolute;
 }
 .header .background {
   background: #fff;
@@ -245,6 +249,9 @@ ul {
   bottom: -10px;
   left: 0px;
 }
+.header .inner .group-flex .menu.none {
+  display: none;
+}
 .header .inner .group-flex .btn-box {
   display: flex;
   justify-content: center;
@@ -285,6 +292,9 @@ ul {
 }
 .header .inner .group-flex .btn-box .btn-menu {
   background: url("../assets/i_burgerbar.png") no-repeat center/contain;
+}
+.header .inner .group-flex .btn-box .btn-menu.close {
+  background: url("../assets/new_2204_cancle.png") no-repeat center/contain;
 }
 .header .inner .group-flex .business-auth-area {
   width: 100%;
@@ -1283,6 +1293,7 @@ main > * + * {
   justify-content: center;
   gap: 24px;
   position: relative;
+  z-index: 3;
   height: 50px;
   background: #2090ff;
 }
@@ -1294,6 +1305,9 @@ main > * + * {
   animation-name: slide_up;
   animation-duration: 0.5s;
   overflow: hidden;
+}
+.top-banner.none {
+  display: none;
 }
 .top-banner .text {
   font-size: 16px;
@@ -1331,12 +1345,10 @@ main > * + * {
 
 .container {
   overflow: hidden;
+  padding-top: 262px;
 }
 .mobile .container {
   margin-top: 45px;
-}
-.container.scrollTop {
-  margin-top: 162px;
 }
 .container .group-flex {
   display: flex;

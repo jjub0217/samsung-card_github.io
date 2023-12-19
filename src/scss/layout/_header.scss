@@ -1,11 +1,12 @@
   .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
 
-    &.scrollTop {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 3;
+    &.fixed {
+      position: absolute;
     }
 
     .background {
@@ -89,6 +90,10 @@
               }
             }
           }
+
+          &.none {
+            display: none;
+          }
         }
 
         .btn-box {
@@ -137,6 +142,10 @@
 
           .btn-menu {
             background: url("../assets/i_burgerbar.png") no-repeat center / contain;
+
+            &.close {
+              background: url("../assets/new_2204_cancle.png") no-repeat center / contain;
+            }
           }
         }
 
@@ -190,6 +199,14 @@
 
       &.on {
         display: block;
+
+
+
+
+        // position: absolute;
+        // top: 324px;
+        // left: 0;
+        // right: 0;
       }
 
       .inner {
