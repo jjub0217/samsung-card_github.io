@@ -197,6 +197,8 @@ function samsungCardUI () {
     wrapper.classList.remove("mobile")
 
     const dimmed = document.querySelector(".dimmed")
+    const headerBackground = document.querySelector(".header .background")
+    const btnBox = document.querySelector(".btn-box")
     const bannerClose = document.querySelector(".banner-closeBtn");
     const btnSearch = document.querySelector(".header .btn-search");
     const searchChatbotArea = document.querySelector(".search-chatbot-area")
@@ -323,11 +325,11 @@ function samsungCardUI () {
       // console.log('돋보기버튼 누름');
       e.target.classList.toggle("close")
       searchChatbotArea.classList.toggle("on")
-      dimmed.classList.toggle("on")
+      dimmed.classList.add("on")
       menu.classList.toggle("none")
       header.classList.toggle("fixed")
       if (e.target.ariaPressed  === 'false') {
-          e.target.ariaPressed = 'true' 
+        e.target.ariaPressed = 'true' 
       } else {
         e.target.ariaPressed = 'false' 
       }
@@ -349,9 +351,9 @@ function samsungCardUI () {
       e.preventDefault();
       e.target.classList.toggle("close")
       gnb.classList.toggle("on")
-      dimmed.classList.toggle("on")
-      menu.classList.toggle("none")
+      menu.classList.add("none")
       header.classList.toggle("fixed")
+      dimmed.classList.add("on")
       if (e.target.ariaExpanded  === 'false') {
         e.target.ariaExpanded = 'true' 
       } else {
@@ -363,59 +365,25 @@ function samsungCardUI () {
      *  @gnb와searchChatbotArea영역끄는기능
      * 
     */
-
- 
+    headerBackground.onclick = (e) => {
+      if(!btnBox.contains(e.target)
+      ){
+        dimmed.classList.remove("on")
+      } 
+    }
     wrapper.onclick = (e) => {
       e.preventDefault();
-      console.log(innerChatbot);
-      // searchChatbotArea 이 열려있을때, 무언가를 클릭했을때 무언가가 btnSearch 가 아니라면 searchChatbotArea 닫아라
-      //  inner 도 아니면 닫혀라
-      // searchChatbotArea 이 열려있을때, btnMenu 눌르면 dimmed 안 사라지게 해라
-      if(searchChatbotArea.classList.contains("on") && e.target !== btnSearch && !innerChatbot.contains(e.target) ){
-        console.log('searchChatbotArea 이 열려있을때, 무언가를 클릭했을때 무언가가 btnSearch 가 아니라면 searchChatbotArea 닫아라');
+      if(searchChatbotArea.classList.contains("on") && !innerChatbot.contains(e.target) && e.target !== btnSearch ){
         searchChatbotArea.classList.remove("on")
-        dimmed.classList.remove("on")
         header.classList.remove("fixed")
         btnSearch.classList.toggle("close")
         menu.classList.remove("none")
       }else if(gnb.classList.contains("on") && e.target !== btnMenu && !innerGnb.contains(e.target)) {
-        console.log('gnb 이 열려있을때, 무언가를 클릭했을때 무언가가 btnMenu 가 아니라면 gnb 닫아라');
         gnb.classList.remove("on")
-        dimmed.classList.remove("on")
         header.classList.remove("fixed")
         btnMenu.classList.toggle("close")
         menu.classList.remove("none")
       }
-
-
-      //  btnMenu 랑 btnSearch 랑 dimmed 를 눌렀다면 
-      // if(innerGnb.contains(e.target) || innerChatbot.contains(e.target)) return
-      // btnMenu 를
-      // searchChatbotArea 영역이 열렸고, 누른게 innerChatbot 이 아니라면 
-
-        
-      // } 
-        // console.log(header.contains(e.target));
-      //   if(searchChatbotArea.classList.contains("on")){
-          // searchChatbotArea.classList.remove("on")
-      //       // header.classList.remove("fixed")
-      //   }
-      // }else if(btnSearch.contains(e.target)){
-      //   if(menu.classList.remove("none")){
-      //     gnb.classList.remove("on")
-      //     searchChatbotArea.classList.add("on")
-      //       // header.classList.remove("fixed")
-      //   }
-        // console.log('header 영역 아니다');
-        // searchChatbotArea.classList.remove("on")
-        // dimmed.classList.remove("on")
-      //   gnb.classList.remove("on")
-        // menu.classList.remove("none")
-      //   searchChatbotArea.classList.remove("on")
-      //   topBannerArea.classList.remove("none")
-      //   header.classList.remove("fixed")
-      //   btnSearch.classList.remove("close")
-      //   btnMenu.classList.remove("close")
     }
 
     authTabList.onclick = (e) => {
