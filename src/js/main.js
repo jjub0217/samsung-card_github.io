@@ -219,7 +219,7 @@ function samsungCardUI () {
     const cardTabList = document.querySelector('.section-cards .tab-list')
     const family = document.querySelector('.family');
 
-    // nav-list(ul)의 자식인 nav-item(li)에 classname 토글하는 함수
+    // nav-list(ul)의 자식인 nav-item(li)에 class name 토글하는 함수
     const navItemOn = (target) => {
       [...navList.children].forEach(navItem => {
         if(navItem === target){
