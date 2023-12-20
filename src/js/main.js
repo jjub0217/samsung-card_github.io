@@ -170,7 +170,7 @@ function samsungCardUI () {
   window.onscroll = () => {
     let curr =  window.scrollY
     if(deviceMode === "desktop"){
-      console.log('데스크탑');
+      // console.log('데스크탑');
       if(curr > 50){
         container.classList.add("scrollTop")
         if(!gnb.classList.contains("on")){
@@ -181,7 +181,7 @@ function samsungCardUI () {
         topBannerArea.classList.remove("none")
       }
     }else{
-      console.log('모바일');
+      // console.log('모바일');
       if(curr > 22.5) {
         appDown.classList.add("top")
       }else{
@@ -193,7 +193,7 @@ function samsungCardUI () {
   // 데스크탑 설정 함수
   const settingDesktop = function() {
 
-    console.log('데스크탑');
+    // console.log('데스크탑');
     wrapper.classList.remove("mobile")
 
     const dimmed = document.querySelector(".dimmed")
@@ -241,29 +241,21 @@ function samsungCardUI () {
       }
     }
 
-    const render = () => {
-      let loginAreas = [...authContents.children];
-      const targetId = authTabList.querySelector('.on').id;
-      loginAreas.filter(area => {
-        if(targetId === area.id){
-          area.style.display = "block"
-          switch(area.id){
-            case 'card':
-            joinText.textContent = "삼성카드 앱 안내";
-            break;
-            case 'id':
-            joinText.textContent = "아이디/비밀번호찾기"; break;
-            case 'cert1':
-            case 'cert2':
-            joinText.textContent = "인증서등록"
-            break;
-            default: 
-            return
-          }
-        }else{
-          area.style.display = "none"
-        }
-      })
+    const render = (data) => {
+      const targetData = document.querySelector(data);
+      switch(targetData.id ){
+        case 'card':
+        joinText.textContent = "삼성카드 앱 안내";
+        break;
+        case 'id':
+        joinText.textContent = "아이디/비밀번호찾기"; break;
+        case 'cert1':
+        case 'cert2':
+        joinText.textContent = "인증서등록"
+        break;
+        default: 
+        return
+      }
     }
 
     const tabAuthMove = (dataset) =>{
@@ -313,24 +305,32 @@ function samsungCardUI () {
       navItemOn(e.target.parentNode)
     }
 
-    depth1Menu.forEach(depth1Menu => {
-      depth1Menu.onclick = (e) => {
+    depth1Menu.forEach(depth1Title => {
+      depth1Title.onclick = (e) => {
         e.preventDefault()
-        console.log(e.target); // a
-        console.log(e.target.parentNode.parentNode.parentNode); // flex-box
         if(!e.target.matches('.depth1-item > .depth1-title')) return;
+        if (e.target.ariaExpanded  === 'false') {
+          e.target.ariaExpanded = 'true' 
+        } else {
+          e.target.ariaExpanded = 'false' 
+        }
         onFlexBox(e.target.parentNode.parentNode.parentNode)
       }
     }) 
 
     btnSearch.onclick = (e) => {
       e.preventDefault();
-      console.log('돋보기버튼 누름');
+      // console.log('돋보기버튼 누름');
       e.target.classList.toggle("close")
       searchChatbotArea.classList.toggle("on")
       dimmed.classList.toggle("on")
       menu.classList.toggle("none")
       header.classList.toggle("fixed")
+      if (e.target.ariaPressed  === 'false') {
+          e.target.ariaPressed = 'true' 
+      } else {
+        e.target.ariaPressed = 'false' 
+      }
     }
 
     searchAreaInput.onkeyup = (e) => {
@@ -347,47 +347,81 @@ function samsungCardUI () {
 
     btnMenu.onclick = (e) => {
       e.preventDefault();
-      console.log('버거버튼 누름');
       e.target.classList.toggle("close")
       gnb.classList.toggle("on")
       dimmed.classList.toggle("on")
       menu.classList.toggle("none")
       header.classList.toggle("fixed")
+      if (e.target.ariaExpanded  === 'false') {
+        e.target.ariaExpanded = 'true' 
+      } else {
+        e.target.ariaExpanded = 'false' 
+      }
     }
 
     /** 
      *  @gnb와searchChatbotArea영역끄는기능
      * 
     */
+
+ 
     wrapper.onclick = (e) => {
       e.preventDefault();
-      if(innerGnb.contains(e.target) || innerChatbot.contains(e.target)) return
-      if(btnMenu.contains(e.target)){
-        if(searchChatbotArea.classList.contains("on")){
-          searchChatbotArea.classList.remove("on")
-        }
-      }else if(btnSearch.contains(e.target)){
-        if(gnb.classList.contains("on")){
-          gnb.classList.remove("on")
-          searchChatbotArea.classList.add("on")
-        }
-      }else{
-        dimmed.classList.remove("on")
-        gnb.classList.remove("on")
-        menu.classList.remove("none")
+      console.log(innerChatbot);
+      // searchChatbotArea 이 열려있을때, 무언가를 클릭했을때 무언가가 btnSearch 가 아니라면 searchChatbotArea 닫아라
+      //  inner 도 아니면 닫혀라
+      // searchChatbotArea 이 열려있을때, btnMenu 눌르면 dimmed 안 사라지게 해라
+      if(searchChatbotArea.classList.contains("on") && e.target !== btnSearch && !innerChatbot.contains(e.target) ){
+        console.log('searchChatbotArea 이 열려있을때, 무언가를 클릭했을때 무언가가 btnSearch 가 아니라면 searchChatbotArea 닫아라');
         searchChatbotArea.classList.remove("on")
-        topBannerArea.classList.remove("none")
+        dimmed.classList.remove("on")
         header.classList.remove("fixed")
-        btnSearch.classList.remove("close")
-        btnMenu.classList.remove("close")
+        btnSearch.classList.toggle("close")
+        menu.classList.remove("none")
+      }else if(gnb.classList.contains("on") && e.target !== btnMenu && !innerGnb.contains(e.target)) {
+        console.log('gnb 이 열려있을때, 무언가를 클릭했을때 무언가가 btnMenu 가 아니라면 gnb 닫아라');
+        gnb.classList.remove("on")
+        dimmed.classList.remove("on")
+        header.classList.remove("fixed")
+        btnMenu.classList.toggle("close")
+        menu.classList.remove("none")
       }
+
+
+      //  btnMenu 랑 btnSearch 랑 dimmed 를 눌렀다면 
+      // if(innerGnb.contains(e.target) || innerChatbot.contains(e.target)) return
+      // btnMenu 를
+      // searchChatbotArea 영역이 열렸고, 누른게 innerChatbot 이 아니라면 
+
+        
+      // } 
+        // console.log(header.contains(e.target));
+      //   if(searchChatbotArea.classList.contains("on")){
+          // searchChatbotArea.classList.remove("on")
+      //       // header.classList.remove("fixed")
+      //   }
+      // }else if(btnSearch.contains(e.target)){
+      //   if(menu.classList.remove("none")){
+      //     gnb.classList.remove("on")
+      //     searchChatbotArea.classList.add("on")
+      //       // header.classList.remove("fixed")
+      //   }
+        // console.log('header 영역 아니다');
+        // searchChatbotArea.classList.remove("on")
+        // dimmed.classList.remove("on")
+      //   gnb.classList.remove("on")
+        // menu.classList.remove("none")
+      //   searchChatbotArea.classList.remove("on")
+      //   topBannerArea.classList.remove("none")
+      //   header.classList.remove("fixed")
+      //   btnSearch.classList.remove("close")
+      //   btnMenu.classList.remove("close")
     }
 
     authTabList.onclick = (e) => {
       if ( !e.target.matches('.auth-list > .auth-item')) return;
-      console.log(e.target.dataset);
       tabAuthMove(e.target.dataset.tab);
-      render()
+      render(e.target.dataset.tab)
     }
 
     cardTabList.onclick = (e) => {
