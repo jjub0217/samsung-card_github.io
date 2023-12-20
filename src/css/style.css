@@ -1346,7 +1346,7 @@ main > * + * {
   padding-top: 262px;
 }
 .mobile .container {
-  margin-top: 45px;
+  padding-top: 45px;
 }
 .container .group-flex {
   display: flex;

@@ -210,11 +210,11 @@ function samsungCardUI () {
     const navList = document.querySelector(".gnb .nav-list")
     const depth1Menu = document.querySelectorAll(".gnb .depth1-menu")
     const authTabList= document.querySelector('.section-auth .auth-list');
-    const authContents= document.querySelector('.section-auth .auth-contents');
+    console.log(authTabList);
+    const authContents = document.querySelector('.section-auth .auth-contents');
 
     const authIdSave = document.querySelector('.form .save') ?? ""
     const authIdSaveBtn = document.querySelector('.form .save button')
-    // const authContents = document.querySelectorAll('.auth-contents .on')
     const joinText = document.querySelector('.join-text')
     const cardTabList = document.querySelector('.section-cards .tab-list')
     const family = document.querySelector('.family');
@@ -260,13 +260,14 @@ function samsungCardUI () {
       }
     }
 
-    const tabAuthMove = (dataset) =>{
-      const authContent = document.querySelector(dataset);
-      [...authContents.children].forEach(authItem => {
-        if(authItem === authContent){
-          authItem.classList.add('on');
+    const tabAuthMove = (dataset, target) =>{
+      const targetTabItemAuthContent = document.querySelector(dataset);
+
+      [...authContents.children].forEach(authContent => {
+        if(authContent === targetTabItemAuthContent){
+          authContent.classList.add('on');
         }else{
-          authItem.classList.remove('on');
+          authContent.classList.remove('on');
         }
       })
     }
@@ -388,6 +389,13 @@ function samsungCardUI () {
 
     authTabList.onclick = (e) => {
       if ( !e.target.matches('.auth-list > .auth-item')) return;
+      [...authTabList.children].forEach(authTabItem => {
+        if(authTabItem === e.target) {
+          e.target.classList.add("on")
+        }else{
+          authTabItem.classList.remove("on")
+        }
+      })
       tabAuthMove(e.target.dataset.tab);
       render(e.target.dataset.tab)
     }
