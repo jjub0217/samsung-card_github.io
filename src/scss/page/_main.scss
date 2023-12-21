@@ -105,7 +105,7 @@ main>*+* {
     height: 462px;
 
     .mobile & {
-      height: 589px;
+      height: auto;
     }
   }
 }
@@ -193,7 +193,7 @@ main>*+* {
 
       .mobile & {
         height: 100%;
-        max-height: 589px;
+        max-height: none;
       }
 
       .image-box {
@@ -343,14 +343,14 @@ main>*+* {
   }
 
   .auth {
-    &-list {
+    &-tabList {
       display: flex;
       font-size: 14px;
       color: #666;
       border-bottom: 1px solid #e2e5eb;
     }
 
-    &-item {
+    &-tabItem {
       display: flex;
       justify-content: center;
       width: 25%;
@@ -477,18 +477,21 @@ main>*+* {
               cursor: pointer;
 
               .saved {
-                background: url("../assets/auth_form_btn.png") no-repeat -50px 0;
-                width: 23px;
-                height: 23px;
-                margin-right: 10px;
-                border: 0;
-              }
-
-              .saved.no {
                 background: url("../assets/auth_form_btn.png") no-repeat 0px 0;
                 width: 23px;
                 height: 23px;
                 margin-right: 10px;
+              }
+
+
+              &.no {
+                .saved {
+                  background: url("../assets/auth_form_btn.png") no-repeat -50px 0;
+                  width: 23px;
+                  height: 23px;
+                  margin-right: 10px;
+                  border: 0;
+                }
               }
             }
           }
@@ -609,6 +612,18 @@ main>*+* {
     margin-top: 52px;
     border: 0;
     padding: 0;
+  }
+
+  .card {
+    &-contents {
+      .content {
+        display: none;
+
+        &.on {
+          display: block;
+        }
+      }
+    }
   }
 
   .tab {

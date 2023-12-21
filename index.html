@@ -1419,18 +1419,18 @@
 
           <section class="section-auth">
             <h2 class="blind">로그인 종류 및 회원가입</h2>
-            <ul class="auth-list">
+            <ul class="auth-tabList">
 
-              <li class="auth-item on" data-tab="#card">
+              <li class="auth-tabItem on" data-tab="#card">
                 앱카드
               </li>
-              <li class="auth-item" data-tab="#id">
+              <li class="auth-tabItem" data-tab="#id">
                 아이디
               </li>
-              <li class="auth-item" data-tab="#cert1">
+              <li class="auth-tabItem" data-tab="#cert1">
                 금융인증서
               </li>
-              <li class="auth-item" data-tab="#cert2">
+              <li class="auth-tabItem" data-tab="#cert2">
                 공동인증서
               </li>
 
@@ -1438,6 +1438,7 @@
 
 
             <div class="auth-contents">
+
               <div class="on content" id="card">
                 <div class="card">
                   <p class="desc">삼성카드 앱의 <br>결제 비밀번호로 로그인 해주세요.</p>
@@ -1452,7 +1453,7 @@
                       <div class="id-area">
                         <label for="id-input" class="blind">아이디입력</label>
                         <input type="text" placeholder="아이디 6~12자리 입력" maxlength="12" title="아이디" id="id-input">
-                        <span class="save">
+                        <span class="save no">
                           <button class="saved" aria-label="아이디저장">
                           </button>
                           저장
@@ -1511,603 +1512,607 @@
         <section class="section-cards">
           <h2 class="blind">삼성카드 종류 소개 슬라이드</h2>
           <ul class="tab-list">
-            <li class="tab-item on" id="personal">
+            <li class="tab-item on" data-tab="#personal">
               개인카드
             </li>
-            <li class="tab-item" id="corporate">
+            <li class="tab-item" data-tab="#corporate">
               법인카드
             </li>
           </ul>
-          <div class="content" id="personal">
-            <div class="swiper">
-              <ul class="swiper-wrapper">
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+
+          <div class="card-contents">
+
+            <div class="content on" id="personal">
+              <div class="swiper">
+                <ul class="swiper-wrapper">
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/monimo.gif" alt>
+                        <p class="badge">new</p>
                       </div>
-                      <img src="./src/assets/monimo.gif" alt>
-                      <p class="badge">new</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">모니모카드</h3>
-                      <p class="desc">스타벅스 50% <br>스트리밍 30% 할인</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+                      <div class="text-box">
+                        <h3 class="title">모니모카드</h3>
+                        <p class="desc">스타벅스 50% <br>스트리밍 30% 할인</p>
                       </div>
-                      <img src="./src/assets/id-vita.gif" alt>
-                      <p class="badge">new</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 iD VITA 카드</h3>
-                      <p class="desc">의료, 보험, 뷰티 등<br>연 최대 66만원 할인</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/id-vita.gif" alt>
+                        <p class="badge">new</p>
                       </div>
-                      <img src="./src/assets/traffic_plus.gif" alt>
-                      <p class="badge">new</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">알뜰교통플러스 삼성카드</h3>
-                      <p class="desc">교통비는 마이너스<br>마일리지는 플러스!</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+                      <div class="text-box">
+                        <h3 class="title">삼성 iD VITA 카드</h3>
+                        <p class="desc">의료, 보험, 뷰티 등<br>연 최대 66만원 할인</p>
                       </div>
-                      <img src="./src/assets/platinum_point.gif" alt>
-                      <p class="badge">new</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">THE ID. PLATINUM(포인트)</h3>
-                      <p class="desc">나만의 취향을 확장하다</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/traffic_plus.gif" alt>
+                        <p class="badge">new</p>
                       </div>
-                      <img src="./src/assets/webtoon-id.gif" alt>
-                      <p class="badge">new</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">네이버웹툰 삼성 ID 카드</h3>
-                      <p class="desc">웹툰/시리즈/시리즈온 에니버페이P<br>50% 적립</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+                      <div class="text-box">
+                        <h3 class="title">알뜰교통플러스 삼성카드</h3>
+                        <p class="desc">교통비는 마이너스<br>마일리지는 플러스!</p>
                       </div>
-                      <img src="./src/assets/id_nomad.gif" alt>
-                      <p class="badge">new</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 ID NOMAD 카드</h3>
-                      <p class="desc">여행/쇼핑 할인의 설렘을<br>가득 채운 한 장의 카드</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/platinum_point.gif" alt>
+                        <p class="badge">new</p>
                       </div>
-                      <img src="./src/assets/taptap0.png" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성카드 taptap O</h3>
-                      <p class="desc">친구추천 1위 카드 <br>연 최대 36만원 할인!</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+                      <div class="text-box">
+                        <h3 class="title">THE ID. PLATINUM(포인트)</h3>
+                        <p class="desc">나만의 취향을 확장하다</p>
                       </div>
-                      <img src="./src/assets/id_on.gif" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 iD ON 카드</h3>
-                      <p class="desc">맛있는<br>자동 맞춤 30% 할인</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/webtoon-id.gif" alt>
+                        <p class="badge">new</p>
                       </div>
-                      <img src="./src/assets/happy_card.png" alt>
-                      <p class="badge">이벤트</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">국민행복 삼성카드 V2</h3>
-                      <p class="desc">다양한 국가바우처 사용에<br>일상 할인 혜택까지!</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+                      <div class="text-box">
+                        <h3 class="title">네이버웹툰 삼성 ID 카드</h3>
+                        <p class="desc">웹툰/시리즈/시리즈온 에니버페이P<br>50% 적립</p>
                       </div>
-                      <img src="./src/assets/id_pet.gif" alt>
-                      <p class="badge">new</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 iD PET 카드</h3>
-                      <p class="desc">펫가족을 위한 라이프 케어 카드</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/id_nomad.gif" alt>
+                        <p class="badge">new</p>
                       </div>
-                      <img src="./src/assets/id_daldal.gif" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 iD 달달할인 카드</h3>
-                      <p class="desc">아파트 관리비, 이동통신요금<br>매달 10% 결제일 할인</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+                      <div class="text-box">
+                        <h3 class="title">삼성 ID NOMAD 카드</h3>
+                        <p class="desc">여행/쇼핑 할인의 설렘을<br>가득 채운 한 장의 카드</p>
                       </div>
-                      <img src="./src/assets/id_simple.gif" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 iD SIMPLE 카드</h3>
-                      <p class="desc">전월이용금액에 상관없이<br>1%·0.7% 할인</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/taptap0.png" alt>
+                        <p class="badge">캐시백</p>
                       </div>
-                      <img src="./src/assets/mileage1.png" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">& MILEAGE <br>PLATINUM</h3>
-                      <p class="desc">어시서나 1천원 1마일,<br>백화점·주유 2마일!</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+                      <div class="text-box">
+                        <h3 class="title">삼성카드 taptap O</h3>
+                        <p class="desc">친구추천 1위 카드 <br>연 최대 36만원 할인!</p>
                       </div>
-                      <img src="./src/assets/id_move.gif" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">섬상 iD MOVE 카드</h3>
-                      <p class="desc">교통, 통신, 커피 등 생활 곳곳<br>월 최대 30,000원 할인금액</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/id_on.gif" alt>
+                        <p class="badge">캐시백</p>
                       </div>
-                      <img src="./src/assets/id_energy.gif" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 iD ENERGY 카드</h3>
-                      <p class="desc">만원만 주유해도,<br>만원할인!</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <div class="back-filter">
-                        <span>카드안내/신청</span>
+                      <div class="text-box">
+                        <h3 class="title">삼성 iD ON 카드</h3>
+                        <p class="desc">맛있는<br>자동 맞춤 30% 할인</p>
                       </div>
-                      <img src="./src/assets/id_ev.gif" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 iD EV 카드</h3>
-                      <p class="desc">전기차 오너 필수카드<br>충전요금 최대 70% 할인</p>
-                    </div>
-                  </a>
-                </li>
-              </ul>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/happy_card.png" alt>
+                        <p class="badge">이벤트</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">국민행복 삼성카드 V2</h3>
+                        <p class="desc">다양한 국가바우처 사용에<br>일상 할인 혜택까지!</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/id_pet.gif" alt>
+                        <p class="badge">new</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성 iD PET 카드</h3>
+                        <p class="desc">펫가족을 위한 라이프 케어 카드</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/id_daldal.gif" alt>
+                        <p class="badge">캐시백</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성 iD 달달할인 카드</h3>
+                        <p class="desc">아파트 관리비, 이동통신요금<br>매달 10% 결제일 할인</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/id_simple.gif" alt>
+                        <p class="badge">캐시백</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성 iD SIMPLE 카드</h3>
+                        <p class="desc">전월이용금액에 상관없이<br>1%·0.7% 할인</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/mileage1.png" alt>
+                        <p class="badge">캐시백</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">& MILEAGE <br>PLATINUM</h3>
+                        <p class="desc">어시서나 1천원 1마일,<br>백화점·주유 2마일!</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/id_move.gif" alt>
+                        <p class="badge">캐시백</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">섬상 iD MOVE 카드</h3>
+                        <p class="desc">교통, 통신, 커피 등 생활 곳곳<br>월 최대 30,000원 할인금액</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/id_energy.gif" alt>
+                        <p class="badge">캐시백</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성 iD ENERGY 카드</h3>
+                        <p class="desc">만원만 주유해도,<br>만원할인!</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <div class="back-filter">
+                          <span>카드안내/신청</span>
+                        </div>
+                        <img src="./src/assets/id_ev.gif" alt>
+                        <p class="badge">캐시백</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성 iD EV 카드</h3>
+                        <p class="desc">전기차 오너 필수카드<br>충전요금 최대 70% 할인</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <button class="btn btn-prev1" aria-label="이전슬라이드"></button>
+              <button class="btn btn-next1" aria-label="다음슬라이드"></button>
             </div>
 
-            <button class="btn btn-prev1" aria-label="이전슬라이드"></button>
-            <button class="btn btn-next1" aria-label="다음슬라이드"></button>
-          </div>
-          <div class="content" id="corporate" style="display:none">
-            <div class="swiper">
-              <ul class="swiper-wrapper">
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_corporate.gif" alt="">
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">CORPORATE # MORE</h3>
-                      <p class="desc">사업에 힘이 되도록,<br>적립에적립을 더</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_corporate2.png" alt="">
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">CORPORATE #2</h3>
-                      <p class="desc">국내외 0.2% 캐시백</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_corporate_global.png" alt="">
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">CORPORATE GLOBAL</h3>
-                      <p class="desc">국내외 0.2%, 해외 0.6%<br>캐시백 혜택</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_corporate.png" alt="">
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">CORPORATE</h3>
-                      <p class="desc">기업과 임직원을 위해<br>꼭 필요한 것에 집중</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_skypass.png" alt="">
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성스카이패스법인카드</h3>
-                      <p class="desc">스카이패스 마일리지 혜택</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_corporate_global.png" alt="">
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">CORPORATE GLOBAL</h3>
-                      <p class="desc">국내외 0.2%, 해외 0.6%<br>캐시백 혜택</p>
-                    </div>
-                  </a>
-                </li>
-
-              </ul>
+            <div class="content" id="corporate">
+              <div class="swiper">
+                <ul class="swiper-wrapper">
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_corporate.gif" alt="">
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">CORPORATE # MORE</h3>
+                        <p class="desc">사업에 힘이 되도록,<br>적립에적립을 더</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_corporate2.png" alt="">
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">CORPORATE #2</h3>
+                        <p class="desc">국내외 0.2% 캐시백</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_corporate_global.png" alt="">
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">CORPORATE GLOBAL</h3>
+                        <p class="desc">국내외 0.2%, 해외 0.6%<br>캐시백 혜택</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_corporate.png" alt="">
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">CORPORATE</h3>
+                        <p class="desc">기업과 임직원을 위해<br>꼭 필요한 것에 집중</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_skypass.png" alt="">
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성스카이패스법인카드</h3>
+                        <p class="desc">스카이패스 마일리지 혜택</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_corporate_global.png" alt="">
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">CORPORATE GLOBAL</h3>
+                        <p class="desc">국내외 0.2%, 해외 0.6%<br>캐시백 혜택</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <button class="btn btn-prev2" aria-label="이전슬라이드"></button>
+              <button class="btn btn-next2" aria-label="다음슬라이드"></button>
             </div>
 
-            <button class="btn btn-prev2" aria-label="이전슬라이드"></button>
-            <button class="btn btn-next2" aria-label="다음슬라이드"></button>
-          </div>
-          <strong class="mobile-headline">카드</strong>
-          <div class="mobileContent" id="mobile">
-            <div class="swiper">
-              <ul class="swiper-wrapper">
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/monimo.gif" alt>
-                      <p class="badge">new</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">모니모카드</h3>
-                      <p class="desc">스타벅스 50% <br>스트리밍 30% 할인</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id-vita.gif" alt>
-                      <p class="badge">new</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 iD VITA 카드</h3>
-                      <p class="desc">의료, 보험, 뷰티 등<br>연 최대 66만원 할인</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/traffic_plus.gif" alt>
-                      <p class="badge">new</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">알뜰교통플러스 삼성카드</h3>
-                      <p class="desc">교통비는 마이너스<br>마일리지는 플러스!</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/platinum_point.gif" alt>
-                      <p class="badge">new</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">THE ID. PLATINUM(포인트)</h3>
-                      <p class="desc">나만의 취향을 확장하다</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/webtoon-id.gif" alt>
-                      <p class="badge">new</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">네이버웹툰 삼성 ID 카드</h3>
-                      <p class="desc">웹툰/시리즈/시리즈온 네이버페이P 50% 적립</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_nomad.gif" alt>
-                      <p class="badge">new</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 ID NOMAD 카드</h3>
-                      <p class="desc">여행/쇼핑 할인의 설렘을<br>가득 채운 한 장의 카드</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/taptap0.png" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성카드 taptap O</h3>
-                      <p class="desc">친구추천 1위 카드 <br>연 최대 36만원 할인!</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_on.gif" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 iD ON 카드</h3>
-                      <p class="desc">맛있는<br>자동 맞춤 30% 할인</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/happy_card.png" alt>
-                      <p class="badge">이벤트</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">국민행복 삼성카드 V2</h3>
-                      <p class="desc">다양한 국가바우처 사용에<br>일상 할인 혜택까지!</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_pet.gif" alt>
-                      <p class="badge">new</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 iD PET 카드</h3>
-                      <p class="desc">펫가족을 위한 라이프 케어 카드</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_daldal.gif" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 iD 달달할인 카드</h3>
-                      <p class="desc">아파트 관리비, 이동통신요금<br>매달 10% 결제일 할인</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_simple.gif" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 iD SIMPLE 카드</h3>
-                      <p class="desc">전월이용금액에 상관없이<br>1%·0.7% 할인</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/mileage1.png" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">& MILEAGE PLATINUM</h3>
-                      <p class="desc">어시서나 1천원 1마일,<br>백화점·주유 2마일!</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_move.gif" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">섬상 iD MOVE 카드</h3>
-                      <p class="desc">교통, 통신, 커피 등 생활 곳곳<br>월 최대 30,000원 할인금액</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_energy.gif" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 iD ENERGY 카드</h3>
-                      <p class="desc">만원만 주유해도,<br>만원할인!</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_ev.gif" alt>
-                      <p class="badge">캐시백</p>
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성 iD EV 카드</h3>
-                      <p class="desc">전기차 오너 필수카드<br>충전요금 최대 70% 할인</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_corporate.gif" alt="">
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">CORPORATE # MORE</h3>
-                      <p class="desc">사업에 힘이 되도록,<br>적립에적립을 더</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_corporate2.png" alt="">
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">CORPORATE #2</h3>
-                      <p class="desc">국내외 0.2% 캐시백</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_corporate_global.png" alt="">
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">CORPORATE GLOBAL</h3>
-                      <p class="desc">국내외 0.2%, 해외 0.6%<br>캐시백 혜택</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_corporate.png" alt="">
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">CORPORATE</h3>
-                      <p class="desc">기업과 임직원을 위해<br>꼭 필요한 것에 집중</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_skypass.png" alt="">
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">삼성스카이패스법인카드</h3>
-                      <p class="desc">스카이패스 마일리지 혜택</p>
-                    </div>
-                  </a>
-                </li>
-                <li class="swiper-slide">
-                  <a href="" class="card-item">
-                    <div class="image-box">
-                      <img src="./src/assets/id_corporate_global.png" alt="">
-                    </div>
-                    <div class="text-box">
-                      <h3 class="title">CORPORATE GLOBAL</h3>
-                      <p class="desc">국내외 0.2%, 해외 0.6%<br>캐시백 혜택</p>
-                    </div>
-                  </a>
-                </li>
-              </ul>
+            <strong class="mobile-headline">카드</strong>
+            <div class="mobileContent" id="mobile">
+              <div class="swiper">
+                <ul class="swiper-wrapper">
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/monimo.gif" alt>
+                        <p class="badge">new</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">모니모카드</h3>
+                        <p class="desc">스타벅스 50% <br>스트리밍 30% 할인</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id-vita.gif" alt>
+                        <p class="badge">new</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성 iD VITA 카드</h3>
+                        <p class="desc">의료, 보험, 뷰티 등<br>연 최대 66만원 할인</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/traffic_plus.gif" alt>
+                        <p class="badge">new</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">알뜰교통플러스 삼성카드</h3>
+                        <p class="desc">교통비는 마이너스<br>마일리지는 플러스!</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/platinum_point.gif" alt>
+                        <p class="badge">new</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">THE ID. PLATINUM(포인트)</h3>
+                        <p class="desc">나만의 취향을 확장하다</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/webtoon-id.gif" alt>
+                        <p class="badge">new</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">네이버웹툰 삼성 ID 카드</h3>
+                        <p class="desc">웹툰/시리즈/시리즈온 네이버페이P 50% 적립</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_nomad.gif" alt>
+                        <p class="badge">new</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성 ID NOMAD 카드</h3>
+                        <p class="desc">여행/쇼핑 할인의 설렘을<br>가득 채운 한 장의 카드</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/taptap0.png" alt>
+                        <p class="badge">캐시백</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성카드 taptap O</h3>
+                        <p class="desc">친구추천 1위 카드 <br>연 최대 36만원 할인!</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_on.gif" alt>
+                        <p class="badge">캐시백</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성 iD ON 카드</h3>
+                        <p class="desc">맛있는<br>자동 맞춤 30% 할인</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/happy_card.png" alt>
+                        <p class="badge">이벤트</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">국민행복 삼성카드 V2</h3>
+                        <p class="desc">다양한 국가바우처 사용에<br>일상 할인 혜택까지!</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_pet.gif" alt>
+                        <p class="badge">new</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성 iD PET 카드</h3>
+                        <p class="desc">펫가족을 위한 라이프 케어 카드</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_daldal.gif" alt>
+                        <p class="badge">캐시백</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성 iD 달달할인 카드</h3>
+                        <p class="desc">아파트 관리비, 이동통신요금<br>매달 10% 결제일 할인</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_simple.gif" alt>
+                        <p class="badge">캐시백</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성 iD SIMPLE 카드</h3>
+                        <p class="desc">전월이용금액에 상관없이<br>1%·0.7% 할인</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/mileage1.png" alt>
+                        <p class="badge">캐시백</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">& MILEAGE PLATINUM</h3>
+                        <p class="desc">어시서나 1천원 1마일,<br>백화점·주유 2마일!</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_move.gif" alt>
+                        <p class="badge">캐시백</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">섬상 iD MOVE 카드</h3>
+                        <p class="desc">교통, 통신, 커피 등 생활 곳곳<br>월 최대 30,000원 할인금액</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_energy.gif" alt>
+                        <p class="badge">캐시백</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성 iD ENERGY 카드</h3>
+                        <p class="desc">만원만 주유해도,<br>만원할인!</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_ev.gif" alt>
+                        <p class="badge">캐시백</p>
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성 iD EV 카드</h3>
+                        <p class="desc">전기차 오너 필수카드<br>충전요금 최대 70% 할인</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_corporate.gif" alt="">
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">CORPORATE # MORE</h3>
+                        <p class="desc">사업에 힘이 되도록,<br>적립에적립을 더</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_corporate2.png" alt="">
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">CORPORATE #2</h3>
+                        <p class="desc">국내외 0.2% 캐시백</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_corporate_global.png" alt="">
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">CORPORATE GLOBAL</h3>
+                        <p class="desc">국내외 0.2%, 해외 0.6%<br>캐시백 혜택</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_corporate.png" alt="">
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">CORPORATE</h3>
+                        <p class="desc">기업과 임직원을 위해<br>꼭 필요한 것에 집중</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_skypass.png" alt="">
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">삼성스카이패스법인카드</h3>
+                        <p class="desc">스카이패스 마일리지 혜택</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="" class="card-item">
+                      <div class="image-box">
+                        <img src="./src/assets/id_corporate_global.png" alt="">
+                      </div>
+                      <div class="text-box">
+                        <h3 class="title">CORPORATE GLOBAL</h3>
+                        <p class="desc">국내외 0.2%, 해외 0.6%<br>캐시백 혜택</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
+
 
           <ul class="more-list">
             <li class="more-item">
@@ -2412,7 +2417,7 @@
 
         <div class="info1-area">
           <ul class="info1-list">
-            <a href="" class="title">회사소개</a>
+            <li class="info1-item title"><a href="">회사소개</a></li>
             <li class="info1-item"><a href="">ENGLISH</a></li>
             <li class="info1-item"><a href="">전자민원접수</a></li>
             <li class="info1-item"><a href="">이용약관</a></li>
@@ -2595,7 +2600,7 @@
           </div>
         </div>
       </div>
-      <div class="mark-area mobile" id="mobile">
+      <div class="mark-area mobile">
         <div class="inner">
           <div class="group">
             <ul class="mark-list">

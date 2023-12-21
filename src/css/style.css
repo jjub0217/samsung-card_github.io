@@ -860,6 +860,9 @@ ul {
   background: #e2e5db;
   margin: 0 6px;
 }
+.footer .title.info1-item::after {
+  margin: 0;
+}
 .footer .tel-area {
   display: flex;
   align-items: center;
@@ -905,21 +908,24 @@ ul {
 }
 .footer .info1-list {
   display: flex;
+  gap: 8px;
 }
 .footer .info1-item {
   color: #2b2e38;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mobile .footer .info1-item {
+  gap: 15px;
 }
 .footer .info1-item:not(:last-child):after {
   content: "";
-  display: inline-block;
+  display: block;
   width: 1px;
   height: 12px;
   background: #e2e5db;
-  margin: 0 8px;
-}
-.mobile .footer .info1-item:not(:last-child):after {
-  margin: 0 15px;
 }
 .footer .family {
   width: 182px;
@@ -1354,7 +1360,7 @@ main > * + * {
   height: 462px;
 }
 .mobile .container .group-flex {
-  height: 589px;
+  height: auto;
 }
 
 .section-appBanner {
@@ -1432,7 +1438,7 @@ main > * + * {
 }
 .mobile .section-visual .swiper-slide {
   height: 100%;
-  max-height: 589px;
+  max-height: none;
 }
 .section-visual .swiper-slide .image-box {
   position: relative;
@@ -1554,23 +1560,23 @@ main > * + * {
 .mobile .section-auth {
   display: none;
 }
-.section-auth .auth-list {
+.section-auth .auth-tabList {
   display: flex;
   font-size: 14px;
   color: #666;
   border-bottom: 1px solid #e2e5eb;
 }
-.section-auth .auth-item {
+.section-auth .auth-tabItem {
   display: flex;
   justify-content: center;
   width: 25%;
   line-height: 48px;
   cursor: pointer;
 }
-.section-auth .auth-item:hover {
+.section-auth .auth-tabItem:hover {
   background: #ddd;
 }
-.section-auth .auth-item.on {
+.section-auth .auth-tabItem.on {
   border-bottom: 2px solid #111;
   font-weight: bold;
   color: #000;
@@ -1668,17 +1674,17 @@ main > * + * {
   cursor: pointer;
 }
 .section-auth .auth-contents .id .form .id-area .save .saved {
+  background: url("../assets/auth_form_btn.png") no-repeat 0px 0;
+  width: 23px;
+  height: 23px;
+  margin-right: 10px;
+}
+.section-auth .auth-contents .id .form .id-area .save.no .saved {
   background: url("../assets/auth_form_btn.png") no-repeat -50px 0;
   width: 23px;
   height: 23px;
   margin-right: 10px;
   border: 0;
-}
-.section-auth .auth-contents .id .form .id-area .save .saved.no {
-  background: url("../assets/auth_form_btn.png") no-repeat 0px 0;
-  width: 23px;
-  height: 23px;
-  margin-right: 10px;
 }
 .section-auth .auth-contents .id .form .password-area {
   position: relative;
@@ -1775,6 +1781,12 @@ main > * + * {
   margin-top: 52px;
   border: 0;
   padding: 0;
+}
+.section-cards .card-contents .content {
+  display: none;
+}
+.section-cards .card-contents .content.on {
+  display: block;
 }
 .section-cards .tab-list {
   display: flex;

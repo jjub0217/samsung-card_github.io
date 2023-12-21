@@ -137,6 +137,7 @@ function samsungCardUI () {
   }
 
 
+  // device 가 뭔지 변수생성 후, 빈 문자열 할당(해당 변수에 할당되는 값이 바뀔 예정)
   let deviceMode = '';
 
   // device 너비를 확인하여 mobile, desktop 모드를 감지하는 함수
@@ -167,10 +168,10 @@ function samsungCardUI () {
   };
 
 
+  // 스크롤을 조금만 내리면 topBanner 가 없어지고, container 에 padding top 이 생기는 함수(데스크탑과 모바일 혼용 함수)
   window.onscroll = () => {
     let curr =  window.scrollY
     if(deviceMode === "desktop"){
-      // console.log('데스크탑');
       if(curr > 50){
         container.classList.add("scrollTop")
         if(!gnb.classList.contains("on")){
@@ -181,7 +182,6 @@ function samsungCardUI () {
         topBannerArea.classList.remove("none")
       }
     }else{
-      // console.log('모바일');
       if(curr > 22.5) {
         appDown.classList.add("top")
       }else{
@@ -190,12 +190,14 @@ function samsungCardUI () {
     }
       return
     } 
+
+
+
   // 데스크탑 설정 함수
   const settingDesktop = function() {
 
-    // console.log('데스크탑');
+    // 데스크탑 DOM요소에 참조한 변수들
     wrapper.classList.remove("mobile")
-
     const dimmed = document.querySelector(".dimmed")
     const headerBackground = document.querySelector(".header .background")
     const btnBox = document.querySelector(".btn-box")
@@ -204,20 +206,19 @@ function samsungCardUI () {
     const searchChatbotArea = document.querySelector(".search-chatbot-area")
     const searchAreaInput = document.querySelector(".search-area input")
     const inputClearBtn = document.querySelector(".input-clear")
- 
     const innerGnb = document.querySelector(".gnb > div")
     const innerChatbot = document.querySelector(".search-chatbot-area > div")
     const navList = document.querySelector(".gnb .nav-list")
     const depth1Menu = document.querySelectorAll(".gnb .depth1-menu")
-    const authTabList= document.querySelector('.section-auth .auth-list');
-    console.log(authTabList);
+    const authTabList= document.querySelector('.section-auth .auth-tabList');
     const authContents = document.querySelector('.section-auth .auth-contents');
-
     const authIdSave = document.querySelector('.form .save') ?? ""
     const authIdSaveBtn = document.querySelector('.form .save button')
     const joinText = document.querySelector('.join-text')
     const cardTabList = document.querySelector('.section-cards .tab-list')
+    const cardContents = document.querySelector('.section-cards .card-contents');
     const family = document.querySelector('.family');
+
 
     // nav-list(ul)의 자식인 nav-item(li)에 class name 토글하는 함수
     const navItemOn = (target) => {
@@ -230,20 +231,40 @@ function samsungCardUI () {
       })
     }
 
+
+    // gnb에서 .depth1-item 클릭했을때 depth1-item의 서브리스트 영역이 나타나는 함수
     const onFlexBox = (target) => {
-      const depth1FlexBoxes = document.querySelectorAll(".gnb .nav-list .nav-item.on .flex-box")
-      if(target.classList.contains("on")){
-        target.classList.remove("on")
-      }else{
-        depth1FlexBoxes.forEach(flexBox => {
-          if(flexBox.classList.contains("on"))
+      const depth1FlexBoxes = document.querySelector(".gnb .nav-list .nav-item.on .depth1-menu");
+      [...depth1FlexBoxes.children].forEach(flexBox => {
+        if(target === flexBox){
+          if(target.classList.contains("on")){
+            target.classList.remove("on")
+          }else{
+            target.classList.add("on")
+          }
+        }else{
           flexBox.classList.remove("on")
-          target.classList.add("on")
-        })
-      }
+        }
+      })
     }
 
-    const render = (data) => {
+
+    // auth-tabItem 클릭했을때 해당 tab과 연결되어있는 authContent가 나타나는 함수
+    const tabAuthMove = (dataset) =>{
+      const targetTabItemAuthContent = document.querySelector(dataset);
+
+      [...authContents.children].forEach(authContent => {
+        if(authContent === targetTabItemAuthContent){
+          targetTabItemAuthContent.classList.add('on');
+        }else{
+          authContent.classList.remove('on');
+        }
+      })
+    }
+
+
+    // auth-tabItem 클릭했을때 해당 tab과 연결되어있는 text가 나타나는 함수
+    const textRender = (data) => {
       const targetData = document.querySelector(data);
       switch(targetData.id ){
         case 'card':
@@ -260,46 +281,27 @@ function samsungCardUI () {
       }
     }
 
-    const tabAuthMove = (dataset, target) =>{
-      const targetTabItemAuthContent = document.querySelector(dataset);
 
-      [...authContents.children].forEach(authContent => {
-        if(authContent === targetTabItemAuthContent){
-          authContent.classList.add('on');
+    // section-cards 영역에서 tab-item 을 클릭하면 해당 tab과 연결되어있는 cardContent 가 나타나는 함수
+    const tabCardMove = (dataset) =>{
+      const targetTabItemCardContent = document.querySelector(dataset);
+      [...cardContents.children].forEach(cardContent => {
+        console.log(cardContent);
+        if(cardContent === targetTabItemCardContent){
+          cardContent.classList.add('on')
         }else{
-          authContent.classList.remove('on');
+          cardContent.classList.remove('on')
         }
       })
     }
 
-    const tabCardMove = (target) =>{
-      [...cardTabList.children].forEach(cardType => {
-        if(cardType=== target){
-          cardType.classList.add('on')
-        }else{
-          cardType.classList.remove('on')
-        }
-      })
-    }
-
-    const cardRender = () => {
-      let cardList = [...cardContents];
-      const targetId = cardTabList.querySelector('.on').id;
-      cardList.filter(content => {
-        if(targetId === content.id){
-          content.style.display = "block"
-        }else{
-          content.style.display = "none"
-        }
-      })
-    }
-
-
-    // 앱다운로드 배너 끄는 함수 
+    
+    // 앱다운로드 배너 끄는 함수 (데스크탑 전용)
     bannerClose.onclick = (e) => {
       e.preventDefault()
       topBannerArea.classList.add("on")
     }
+
 
     // 윈도우에 이벤트 추가하는 함수 (데스크탑 전용)
     navList.onmouseover = (e) => {
@@ -308,6 +310,8 @@ function samsungCardUI () {
       navItemOn(e.target.parentNode)
     }
 
+
+    // gnb에서 depth1-title에 이벤트 추가하는 함수 (데스크탑 전용)
     depth1Menu.forEach(depth1Title => {
       depth1Title.onclick = (e) => {
         e.preventDefault()
@@ -321,6 +325,37 @@ function samsungCardUI () {
       }
     }) 
 
+
+   // auth-item 에 이벤트 추가하는 함수 (데스크탑 전용)
+    authTabList.onclick = (e) => {
+      if ( !e.target.matches('.auth-tabList > .auth-tabItem')) return;
+      [...authTabList.children].forEach(authTabItem => {
+        if(authTabItem === e.target) {
+          e.target.classList.add("on")
+        }else{
+          authTabItem.classList.remove("on")
+        }
+      })
+      tabAuthMove(e.target.dataset.tab);
+      textRender(e.target.dataset.tab)
+    }
+
+
+    // section-cards 영역에서 tab-item 에 이벤트 추가하는 함수 (데스트탑 전용)
+    cardTabList.onclick = (e) => {
+      if (!e.target.matches('.tab-list > .tab-item')) return;
+      tabCardMove(e.target.dataset.tab);
+    }
+
+
+    // section-auth 영역에서 아이디 tab-item 클릭하면 나타나는 .save 에 이벤트 추가하는 함수
+    authIdSave.onclick = (e) => {
+      if (!e.target.matches('.form .save') && !e.target.matches('.save button')) return;
+      authIdSaveBtn.classList.toggle("no")
+    }
+
+
+    // btn-search 에 이벤트 추가하는 함수
     btnSearch.onclick = (e) => {
       e.preventDefault();
       // console.log('돋보기버튼 누름');
@@ -336,6 +371,8 @@ function samsungCardUI () {
       }
     }
 
+
+    // search-area 영역에서 input 에 이벤트 추가하는 함수
     searchAreaInput.onkeyup = (e) => {
       if(e.target.value){
         inputClearBtn.classList.add("on")
@@ -344,10 +381,14 @@ function samsungCardUI () {
       }
     }
 
+
+    // input-clear 에 이벤트 추가하는 함수
     inputClearBtn.onclick = ()  => {
       searchAreaInput.value = ""
     }
 
+
+    // btn-menu 에 이벤트 추가하는 함수
     btnMenu.onclick = (e) => {
       e.preventDefault();
       e.target.classList.toggle("close")
@@ -362,10 +403,13 @@ function samsungCardUI () {
       }
     }
 
-    /** 
-     *  @gnb와searchChatbotArea영역끄는기능
-     * 
-    */
+
+    // gnb와 searchChatbotArea 영역과 dimmed 끄는 이벤트 함수 :
+    // headerBackground click 이벤트
+    // wrapper click 이벤트
+    // searchChatbotArea click 이벤트
+    // gnb click 이벤트
+    // dimmed click 이벤트
     headerBackground.onclick = (e) => {
       if(!btnBox.contains(e.target)
       ){
@@ -374,6 +418,7 @@ function samsungCardUI () {
     }
     wrapper.onclick = (e) => {
       e.preventDefault();
+      console.log(e);
       if(searchChatbotArea.classList.contains("on") && !innerChatbot.contains(e.target) && e.target !== btnSearch ){
         searchChatbotArea.classList.remove("on")
         header.classList.remove("fixed")
@@ -386,35 +431,24 @@ function samsungCardUI () {
         menu.classList.remove("none")
       }
     }
-
-    authTabList.onclick = (e) => {
-      if ( !e.target.matches('.auth-list > .auth-item')) return;
-      [...authTabList.children].forEach(authTabItem => {
-        if(authTabItem === e.target) {
-          e.target.classList.add("on")
-        }else{
-          authTabItem.classList.remove("on")
-        }
-      })
-      tabAuthMove(e.target.dataset.tab);
-      render(e.target.dataset.tab)
+    searchChatbotArea.onclick = (e) => {
+      if(searchChatbotArea.classList.contains("on") && !innerChatbot.contains(e.target)){
+        dimmed.classList.remove("on")
+      }
+    }
+    gnb.onclick = (e) => {
+      if(gnb.classList.contains("on") && !innerGnb.contains(e.target)){
+        dimmed.classList.remove("on")
+      }
+    }
+    dimmed.onclick = (e)=> {
+      if(dimmed.classList.contains("on")){
+        dimmed.classList.remove("on")
+      }
     }
 
-    cardTabList.onclick = (e) => {
-      if (!e.target.matches('.tab-list > .tab-item')) return;
-      tabCardMove(e.target);
-      cardRender()
-    }
 
-    authIdSave.onclick = (e) => {
-      if (!e.target.matches('.form .save') && !e.target.matches('.save button')) return;
-      authIdSaveBtn.classList.toggle("no")
-    }
-
-    /** 
-     *  @섹션이벤트영역에서sticky기능
-     * 
-    */
+    // section-event 영역에서 sticky 기능하는 gsap 라이브러리
     ScrollTrigger.create({
       trigger: ".section-event .left-area",
       pin: true,
@@ -423,6 +457,9 @@ function samsungCardUI () {
       end: "bottom 615px",
     });
 
+
+
+    // .family 에 이벤트 추가하는 함수
     family.onclick = (e) => {
       e.preventDefault()
       family.classList.toggle('opacity')
@@ -430,42 +467,49 @@ function samsungCardUI () {
 
   } // settingDesktop()
 
+
+
   // 모바일 설정 함수
   const settingMobile = function() {
-    console.log('모바일');
-    // 모바일로 되면 wrapper 에 mobile 붙히고
     wrapper.classList.add("mobile")
-    console.log(wrapper);
+
+     // 모바일 DOM요소에 참조한 변수들
     const btnMenu = document.querySelector(".btn-menu ") 
     const moGnbCloseBtn = document.querySelector(".mo_gnb-close")
     const moGnb = document.querySelector(".mo_gnb")
-
+    const info2Title = document.querySelector(".info2-title")
     
+
+    // btn-menu 에 이벤트 추가하는 함수
     btnMenu.onclick = (e) => {
-      console.log('버거버튼 클릭');
       moGnb.classList.add("on")
     }
+
+    // mo_gnb 에 이벤트 추가하는 함수
     moGnbCloseBtn.onclick = (e) => {
       moGnb.classList.add("on")
     }
 
-    const info2Title = document.querySelector(".info2-title")
-    console.log(info2Title);
+
+    // info2-title 에 이벤트 추가하는 함수
     info2Title.onclick = (e) => {
       e.preventDefault()
       e.target.classList.toggle("on")
     }
 
+    // mo_gnb-close 에 이벤트 추가하는 함수
     moGnbCloseBtn.onclick =(e) => {
       e.preventDefault()
       moGnb.classList.toggle("on")
     }
   };
-  // DOM 콘텐츠가 준비되면 init 이벤트 핸들러 연결
+
+  // DOM 콘텐츠가 준비되면 handleWindowResize 이벤트 핸들러 연결
   window.addEventListener('DOMContentLoaded', handleWindowResize);
- window.addEventListener('resize', handleWindowResize);
+  // 윈도우 창의 사이즈가 변하면 handleWindowResize 이벤트 핸들러 연결
+  window.addEventListener('resize', handleWindowResize);
 }
 
 
-
+// 삼성카드 웹페이지 실행
 samsungCardUI()

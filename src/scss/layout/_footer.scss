@@ -31,6 +31,12 @@
       background: #e2e5db;
       margin: 0 6px;
     }
+
+    &.info1-item {
+      &::after {
+        margin: 0;
+      }
+    }
   }
 
   .tel {
@@ -99,25 +105,33 @@
 
     &-list {
       display: flex;
+      gap: 8px;
     }
 
     &-item {
       color: #2b2e38;
       font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .mobile & {
+        gap: 15px;
+        // margin: 0 15px;
+      }
 
       &:not(:last-child):after {
         content: '';
-        display: inline-block;
+        display: block;
         width: 1px;
         height: 12px;
         background: #e2e5db;
-        margin: 0 8px;
-
-        .mobile & {
-          margin: 0 15px;
-        }
-
+        // margin: 0 8px;
       }
+
+      // &:not(.title) {
+      //   gap: 8px;
+      // }
     }
   }
 
