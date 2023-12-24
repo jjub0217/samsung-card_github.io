@@ -135,6 +135,7 @@ ul {
   background: url("../assets/70x88_6.png") no-repeat;
   cursor: pointer;
   background-position: -280px -880px;
+  z-index: 1000;
 }
 .chatBot.none {
   display: none;
@@ -1787,6 +1788,9 @@ main > * + * {
 }
 .section-cards .card-contents .content.on {
   display: block;
+}
+.mobile .section-cards .card-contents .content.on {
+  display: none;
 }
 .section-cards .tab-list {
   display: flex;

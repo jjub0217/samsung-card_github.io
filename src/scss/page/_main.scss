@@ -621,6 +621,10 @@ main>*+* {
 
         &.on {
           display: block;
+
+          .mobile & {
+            display: none;
+          }
         }
       }
     }
