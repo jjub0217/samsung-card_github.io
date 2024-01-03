@@ -110,6 +110,50 @@ main>*+* {
   }
 }
 
+.control-area {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+
+  .pagination {
+    .swiper-pagination-bullet {
+      width: 6px;
+      height: 6px;
+      background: #dcdcdc;
+      opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+      width: 16px;
+      border-radius: 9.6px;
+    }
+  }
+
+  .checkbox {
+    appearance: none;
+
+    &+label.pause {
+      width: 12px;
+      height: 6px;
+      border-top: 3px solid rgba(0, 0, 0, 0);
+      border-bottom: 3px solid rgba(0, 0, 0, 0);
+      border-left: 5px solid #fff;
+      margin-top: -2px;
+      cursor: pointer;
+    }
+
+    &:checked+label {
+      width: 6px;
+      height: 6px;
+      border-color: #dcdcdc;
+      border-style: double;
+      border-width: 0 0 0 6px;
+      cursor: pointer;
+    }
+  }
+}
+
 .section-appBanner {
   display: none;
 
@@ -277,55 +321,26 @@ main>*+* {
     }
 
     .control-area {
-      position: absolute;
+      gap: 5px;
       bottom: 53px;
       left: 52px;
-      z-index: 1;
-      display: flex;
-      align-items: center;
 
       .mobile & {
         left: 24px;
       }
 
       .pagination {
+        &.swiper-pagination-horizontal {
+          width: auto;
+        }
+
         .swiper-pagination-bullet {
-          width: 6px;
-          height: 6px;
-          background: #dcdcdc;
-          opacity: 1;
           margin: 3px;
         }
 
         .swiper-pagination-bullet-active {
-          width: 16px;
           background: #ffffff;
-          border-radius: 9.6px;
         }
-      }
-
-      .checkbox {
-        appearance: none;
-      }
-
-      .autoplay {
-        width: 6px;
-        height: 6px;
-        margin-top: -2px;
-        border-color: #dcdcdc;
-        border-style: double;
-        border-width: 0 0 0 6px;
-        cursor: pointer;
-      }
-
-      .pause {
-        border-top: 3px solid rgba(0, 0, 0, 0);
-        border-bottom: 3px solid rgba(0, 0, 0, 0);
-        border-left: 5px solid #ffffff;
-        margin-top: -2px;
-        width: 6px;
-        height: 6px;
-        cursor: pointer;
       }
     }
   }
@@ -779,6 +794,10 @@ main>*+* {
       &-next2 {
         background: url("../assets/swiper_next_btn.png") no-repeat center / cover;
         right: 15px;
+
+        &.swiper-button-disabled {
+          opacity: 0.3;
+        }
       }
     }
   }
@@ -1497,51 +1516,33 @@ main>*+* {
     }
 
     .control-area {
-      position: absolute;
+      gap: 5px;
       bottom: 0;
-      z-index: 1;
-      display: flex;
-      align-items: center;
 
       .pagination {
+        &.swiper-pagination-horizontal {
+          width: auto;
+        }
+
         .swiper-pagination-bullet {
-          width: 6px;
-          height: 6px;
-          background: #dcdcdc;
           margin: 0 3px;
-          opacity: 1;
         }
 
         .swiper-pagination-bullet-active {
-          width: 16px;
           background: #2090ff;
-          border-radius: 9.6px;
         }
       }
 
       .checkbox {
-        appearance: none;
-      }
+        &+label {
+          margin-top: 4px;
+        }
 
-      .autoplay {
-        width: 6px;
-        height: 6px;
-        margin-top: 4px;
-        border-color: #dcdcdc;
-        border-style: double;
-        border-width: 0 0 0 6px;
-        cursor: pointer;
-      }
-
-      .pause {
-        border-top: 3px solid rgba(0, 0, 0, 0);
-        border-bottom: 3px solid rgba(0, 0, 0, 0);
-        border-left: 5px solid #dcdcdc;
-        margin-top: 4px;
-        width: 6px;
-        height: 6px;
-        cursor: pointer;
+        &+label.pause {
+          border-left: 5px solid #dcdcdc;
+        }
       }
     }
   }
+
 }

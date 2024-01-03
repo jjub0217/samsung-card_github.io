@@ -12,7 +12,8 @@ function samsungCardUI () {
   const chatBot = document.querySelector('.chatBot')
   const chatBotBtn = document.querySelector('.chatBot .btn')
   const closeBtn = document.querySelector('.chatBot .closeBtn')
-  const autoplayBtn = document.querySelectorAll("section .control-area");
+  const controlAreas = document.querySelectorAll("section .control-area");
+  console.log(controlAreas);
   const header = document.querySelector(".header")
   const btnMenu = document.querySelector(".header .btn-menu");
   const menu = document.querySelector(".menu")
@@ -107,29 +108,28 @@ function samsungCardUI () {
   setInterval(animateSprite, 50);
 
   // 스와이퍼 자동재생 버튼에 추가한 이벤트(데스크탑, 모바일 모두 적용)
-  autoplayBtn.forEach(btn => {
-    btn.onchange = (e) => {
-      const checked = e.target.checked
-      const label = e.target.nextElementSibling;
-      if(checked){
-        label.classList.add('pause')
-        if(e.target.classList.contains("visual")){
-          visualSwiper.autoplay.stop();
-        }
-        if(e.target.classList.contains("board")){
-          boardSwiper.autoplay.stop();
-        }
+  controlAreas.forEach(controlArea => {
+    controlArea.onchange = (e) => {
+      const label =  e.target.nextElementSibling;
+      console.log(label);
+    const checked = e.target.checked
+    label.classList.toggle("pause")
+    if(e.target.id === "visual-autoplay"){
+      if(!checked){
+        visualSwiper.autoplay.stop();
+        
       }else{
-        label.classList.remove('pause')
-        if(e.target.classList.contains("visual")){
-          visualSwiper.autoplay.start();
-        }
-        if(e.target.classList.contains("visual")){
-          boardSwiper.autoplay.start();
-        }
+        visualSwiper.autoplay.start();
       }
-    }
+    }else if(e.target.id === "board-autoplay"){
+      if(!checked){
+        boardSwiper.autoplay.stop();
+      }else{
+        boardSwiper.autoplay.start();
+      }
+    }}
   })
+  
 
   // 챗봇 끄는 버튼에 추가한 이벤트(데스크탑, 모바일 모두 적용)
   closeBtn.onclick = () => {
@@ -416,21 +416,20 @@ function samsungCardUI () {
         dimmed.classList.remove("on")
       } 
     }
-    wrapper.onclick = (e) => {
-      e.preventDefault();
-      console.log(e);
-      if(searchChatbotArea.classList.contains("on") && !innerChatbot.contains(e.target) && e.target !== btnSearch ){
-        searchChatbotArea.classList.remove("on")
-        header.classList.remove("fixed")
-        btnSearch.classList.toggle("close")
-        menu.classList.remove("none")
-      }else if(gnb.classList.contains("on") && e.target !== btnMenu && !innerGnb.contains(e.target)) {
-        gnb.classList.remove("on")
-        header.classList.remove("fixed")
-        btnMenu.classList.toggle("close")
-        menu.classList.remove("none")
-      }
-    }
+    // wrapper.onclick = (e) => {
+    //   e.preventDefault();
+    //   if(searchChatbotArea.classList.contains("on") && !innerChatbot.contains(e.target) && e.target !== btnSearch ){
+    //     searchChatbotArea.classList.remove("on")
+    //     header.classList.remove("fixed")
+    //     btnSearch.classList.toggle("close")
+    //     menu.classList.remove("none")
+    //   }else if(gnb.classList.contains("on") && e.target !== btnMenu && !innerGnb.contains(e.target)) {
+    //     gnb.classList.remove("on")
+    //     header.classList.remove("fixed")
+    //     btnMenu.classList.toggle("close")
+    //     menu.classList.remove("none")
+    //   }
+    // }
     searchChatbotArea.onclick = (e) => {
       if(searchChatbotArea.classList.contains("on") && !innerChatbot.contains(e.target)){
         dimmed.classList.remove("on")
