@@ -278,8 +278,6 @@
             line-height: 20px;
             display: flex;
             flex-direction: column;
-
-
           }
 
           &-title {
@@ -287,10 +285,21 @@
             padding-bottom: 13px;
             font-weight: bold;
             border-bottom: 1px solid #b7b7b7;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            border-bottom: 1px solid #b7b7b7;
+
+            &::after {
+              content: "";
+              display: block;
+              background: url("../assets/ico_allmenu.png") no-repeat scroll 0 -354px rgba(0, 0, 0, 0);
+              width: 16px;
+              height: 16px;
+            }
 
             &[role="button"] {
               display: block;
-              width: 100%;
               height: 100%;
               background: transparent;
               border: 0;
@@ -316,22 +325,6 @@
               }
             }
 
-            &[role="link"] {
-              width: 100%;
-              display: flex;
-              gap: 5px;
-              align-items: center;
-              border-bottom: 1px solid #b7b7b7;
-
-              &::after {
-                content: "";
-                display: block;
-                background: url("../assets/ico_allmenu.png") no-repeat scroll 0 -354px rgba(0, 0, 0, 0);
-                width: 16px;
-                height: 16px;
-              }
-            }
-
             &.qna {
               &:hover {
                 color: #2e81f8;
@@ -352,7 +345,7 @@
           }
 
           &-title {
-            &[role="link"] {
+            &[data-link="blank_link"] {
               width: 100%;
               display: flex;
               gap: 10px;

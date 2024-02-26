@@ -405,10 +405,20 @@ ul {
   padding-bottom: 13px;
   font-weight: bold;
   border-bottom: 1px solid #b7b7b7;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  border-bottom: 1px solid #b7b7b7;
+}
+.header .gnb .inner .depth1-title::after {
+  content: "";
+  display: block;
+  background: url("../assets/ico_allmenu.png") no-repeat scroll 0 -354px rgba(0, 0, 0, 0);
+  width: 16px;
+  height: 16px;
 }
 .header .gnb .inner .depth1-title[role=button] {
   display: block;
-  width: 100%;
   height: 100%;
   background: transparent;
   border: 0;
@@ -429,20 +439,6 @@ ul {
 .header .gnb .inner .depth1-title[role=button]:hover::after {
   background: url("../assets/btn_arrow_up_blue.png") no-repeat;
 }
-.header .gnb .inner .depth1-title[role=link] {
-  width: 100%;
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  border-bottom: 1px solid #b7b7b7;
-}
-.header .gnb .inner .depth1-title[role=link]::after {
-  content: "";
-  display: block;
-  background: url("../assets/ico_allmenu.png") no-repeat scroll 0 -354px rgba(0, 0, 0, 0);
-  width: 16px;
-  height: 16px;
-}
 .header .gnb .inner .depth1-title.qna:hover {
   color: #2e81f8;
 }
@@ -452,13 +448,13 @@ ul {
 .header .gnb .inner .depth2-item:hover {
   color: #2e81f8;
 }
-.header .gnb .inner .depth2-title[role=link] {
+.header .gnb .inner .depth2-title[data-link=blank_link] {
   width: 100%;
   display: flex;
   gap: 10px;
   align-items: center;
 }
-.header .gnb .inner .depth2-title[role=link]::after {
+.header .gnb .inner .depth2-title[data-link=blank_link]::after {
   content: "";
   display: block;
   background: url("../assets/ico_allmenu.png") no-repeat scroll 0 -354px rgba(0, 0, 0, 0);
