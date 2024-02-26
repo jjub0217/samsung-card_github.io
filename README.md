@@ -26,26 +26,25 @@
 ## 프로젝트 웹접근성
 
 - Open-WAX 결과 : error 0 <br>
-<img src="https://github.com/jjub0217/samsung-card_github.io/assets/62126380/5cb6ce48-cb81-4568-a12e-0383f62c1bda" width=500> <br>
+<img src="https://github.com/jjub0217/samsung-card_github.io/assets/62126380/991c81a5-f8ab-4fc5-a210-3d7fa19e24c3" width=500> <br>
 - WAVE 결과: error 0 <br>
-<img src="https://github.com/jjub0217/beautiful.github.io/assets/62126380/ffb245d7-2bab-4bd5-826f-e4e504108665" width=500>
+<img src="https://github.com/jjub0217/samsung-card_github.io/assets/62126380/1a0fd620-8432-447d-87d9-640e8e7e7c09" width=500>
 
 
 ## 기술 스택
 ![HTML5](https://img.shields.io/badge/HTML5-FE642E?style=flat-square&logo=HTML5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-2E9AFE?style=flat-square&logo=CSS3&logoColor=white)
 ![SASS](https://img.shields.io/badge/Sass-cc6699?style=flat-square&logo=sass&logoColor=white)
-![jQuery](https://img.shields.io/badge/jQuery-0769ad?style=flat-square&logo=jQuery&logoColor=white)
-![AOS](https://img.shields.io/badge/AOS-%236172bc?style=flat-square)
+
+![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=GreenSock&logoColor=white)
 
 
 
 ## 포함된 자바스크립트 라이브러리
-| Name      | License     | Copyright                                 |
-| --------- | ----------- | ----------------------------------------- |
-| Swiper.js | MIT License | 2019 Vladimir Kharlampidi                 |
-| jQuery    | MIT License | OpenJS Foundation and jQuery contributors |
-| AOS       | MIT License | 2016 michalsnik                           |
+| Name      | License                          | Copyright                    |
+| --------- | -------------------------------- | ---------------------------- |
+| Swiper.js | MIT License                      | 2019 Vladimir Kharlampidi    |
+| GSAP      | Standard License, Club GreenSock | 3.12.2ver 2023 GreenSock LLC |
 
 
 
