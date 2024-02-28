@@ -20,15 +20,15 @@
 
 ## 프로젝트 웹표준(W3C의 Markup Validation Service)
 결과 : 0개 <br>
-<img src="https://github.com/jjub0217/samsung-card_github.io/assets/62126380/ddbf94ee-5159-47ef-a1ab-b5ca819dbdea" width=500> <br>
+<img src="https://github.com/jjub0217/samsung-card_github.io/assets/62126380/ddbf94ee-5159-47ef-a1ab-b5ca819dbdea" width=800> <br>
 
 
 ## 프로젝트 웹접근성
 
 - Open-WAX 결과 : error 0 <br>
-<img src="https://github.com/jjub0217/samsung-card_github.io/assets/62126380/991c81a5-f8ab-4fc5-a210-3d7fa19e24c3" width=500> <br>
+<img src="https://github.com/jjub0217/samsung-card_github.io/assets/62126380/991c81a5-f8ab-4fc5-a210-3d7fa19e24c3" width=800> <br>
 - WAVE 결과: error 0 <br>
-<img src="https://github.com/jjub0217/samsung-card_github.io/assets/62126380/1a0fd620-8432-447d-87d9-640e8e7e7c09" width=500>
+<img src="https://github.com/jjub0217/samsung-card_github.io/assets/62126380/1a0fd620-8432-447d-87d9-640e8e7e7c09" width=800>
 
 
 ## 기술 스택
