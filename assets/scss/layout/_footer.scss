@@ -1,0 +1,418 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: 37px 0;
+  margin-top: 50px;
+  background-color: #f3f5f8;
+  font-size: 14px;
+  color: #2b2e38;
+
+  .mobile & {
+    margin-top: 52px;
+    padding: 11px 0 0;
+    background-color: rgb(221, 222, 227);
+    color: #575b63;
+
+    .inner {
+      display: none;
+    }
+  }
+
+  .title,
+  .important_text {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+
+    &::after {
+      display: block;
+      width: 1px;
+      height: 12px;
+      margin: 0 6px;
+      background: #c7cad0;
+      content: "";
+    }
+  }
+
+  .section_ars {
+    display: flex;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+
+    .ars_list {
+      display: flex;
+      gap: 5px;
+    }
+  }
+
+  .info_list,
+  .policy_list {
+    display: flex;
+
+    .mobile & {
+      border-bottom: 1px solid #d3d5da;
+      padding-top: 12px;
+    }
+  }
+
+  .info_list {
+    gap: 8px;
+
+    .mobile & {
+      flex-wrap: wrap;
+      padding-bottom: 12px;
+    }
+  }
+
+  .info_item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .mobile & {
+      &::after {
+        display: block;
+        width: 1px;
+        height: 12px;
+        background: #c7cad0;
+        margin: 0 6px;
+        content: "";
+      }
+    }
+  }
+
+  .policy_list {
+    align-items: center;
+
+    .mobile & {
+      position: relative;
+      padding-bottom: 12px;
+    }
+  }
+
+  .address_area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 770px;
+    padding-top: 17px;
+    letter-spacing: -1px;
+  }
+
+  .sales_email::after {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: -2px 5px 0;
+    background: url("../images/ico_help.png") no-repeat 0 center;
+    vertical-align: middle;
+    content: "";
+  }
+
+  .family_site_area {
+    .mobile & {
+      display: none;
+    }
+  }
+
+  .company_info_family_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0 5px;
+
+    .family_site_area {
+      position: relative;
+      width: 182px;
+      height: 29px;
+      padding: 0 11px;
+      border: 1px solid #808789;
+      background: #fff;
+
+      .family_site_area_title {
+        position: relative;
+        width: 100%;
+        font-weight: bold;
+        text-align: left;
+        color: #7b7e86;
+        line-height: 29px;
+        &::after {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          display: block;
+          width: 14px;
+          height: 9px;
+          margin: 0;
+          background: url("../images/sp_arrow_select.png") no-repeat 0 -11px transparent;
+          transform: translateY(-50%);
+          content: "";
+        }
+      }
+      .family_site_area_title[aria-pressed="true"]::after {
+        background-position: 0 0;
+      }
+    }
+
+    .family_list {
+      overflow-y: scroll;
+      position: absolute;
+      left: -1px;
+      bottom: 0;
+      z-index: 1;
+      width: 182px;
+      height: 225px;
+      transform: translateY(-27px);
+      border: 1px solid #808789;
+      border-bottom: 1px solid #b8b8b8;
+      background: #fff;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .family_item {
+      padding: 5px 0 5px 10px;
+      font-size: 12px;
+      color: #686868;
+      &:hover {
+        background: #ececec;
+      }
+    }
+
+    .link_family {
+      display: block;
+      height: 100%;
+    }
+  }
+
+  .company_info_area-mobile,
+  .company_policies_area-mobile,
+  .award_area-mobile {
+    display: none;
+
+    .mobile & {
+      display: block;
+      background-color: #e9ebef;
+      .inner {
+        display: block;
+      }
+    }
+  }
+
+  .company_info_area-mobile {
+    .mobile & {
+      border-top: 1px solid #d3d5da;
+    }
+  }
+
+  .company_policies_area {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+
+    .link_company_info {
+      display: flex;
+      align-items: center;
+
+      &::after {
+        display: block;
+        width: 15px;
+        height: 15px;
+        margin-left: 5px;
+        background: url("../images/sp_arrow_company_info.png") no-repeat 0 -23px /
+          cover;
+        content: "";
+      }
+    }
+  }
+
+  .company_policies_area-mobile {
+    .mobile & {
+      .inner {
+        position: relative;
+      }
+
+      .policy_item_title {
+        &::after {
+          display: block;
+          width: 10.5px;
+          height: 6.5px;
+          background: url("../images/sp_arrow_company_info.png") no-repeat 0 -6px /
+            10.5px 25px;
+          content: "";
+        }
+
+        &[aria-pressed="true"] {
+          &::after {
+            background-position: 0 0;
+          }
+          & + .address_area {
+            height: 155px;
+            visibility: visible;
+          }
+        }
+      }
+
+      .address {
+        &_area {
+          overflow: hidden;
+          width: fit-content;
+          height: 0;
+          padding: 0;
+          transition: height ease-out 0.3s;
+          visibility: hidden;
+        }
+
+        &_list {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 7px;
+          padding-top: 12px;
+        }
+
+        &_item {
+          display: flex;
+          color: #575b63;
+          line-height: 1.3;
+        }
+      }
+
+      .category {
+        min-width: 124px;
+      }
+
+      .desc {
+        display: flex;
+      }
+
+      .ars_link {
+        position: absolute;
+        top: 12px;
+        right: 21px;
+        display: flex;
+        align-self: baseline;
+        gap: 3px;
+        .desc {
+          font-size: 13px;
+        }
+      }
+    }
+
+    & + .logo_wrap {
+      display: none;
+    }
+  }
+
+  .company-policy-area-mobile + .logo-wrap {
+    display: none;
+  }
+
+  .logo_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .mobile & {
+      display: flex;
+      padding-top: 12px;
+      background-color: #e9ebef;
+
+      .inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #d3d5da;
+      }
+
+      .logo {
+        width: 70px;
+        height: 24px;
+        background-size: cover;
+      }
+    }
+
+    .copy {
+      display: flex;
+      align-items: center;
+      color: #7b7e86;
+    }
+
+    .logo {
+      width: 97px;
+      height: 43px;
+      background: url("../images/img_logo_footer.png") no-repeat center;
+    }
+  }
+
+  .award_area {
+    .content {
+      position: relative;
+      width: 720px;
+      padding: 0 40px;
+    }
+
+    .award_link {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+
+    .text_box {
+      margin-left: 10px;
+      font-size: 11px;
+      color: #747474;
+      line-height: 16px;
+      letter-spacing: -1px;
+    }
+
+    .slide_btn {
+      position: absolute;
+      top: 50%;
+      width: 21px;
+      z-index: 1;
+      height: 21px;
+      transform: translateY(-50%);
+
+      &_prev {
+        left: 0;
+        background: url("../images/sp_arrow_slide.png") no-repeat -43px -40px;
+      }
+
+      &_next {
+        right: 0;
+        background: url("../images/sp_arrow_slide.png") no-repeat -84px -40px;
+      }
+    }
+  }
+
+  .award_area-mobile {
+    .mobile & {
+      padding: 12px 0 120px;
+
+      .award_area {
+        overflow: scroll;
+
+        .award_list {
+          display: flex;
+          align-items: center;
+          gap: 17px;
+          padding-bottom: 15px;
+        }
+      }
+      .image_box {
+        width: 27px;
+      }
+
+      .text_box {
+        margin-left: 8px;
+        font-size: 13px;
+        color: #666666;
+        line-height: 1.3;
+      }
+    }
+  }
+}
