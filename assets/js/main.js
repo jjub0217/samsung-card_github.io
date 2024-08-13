@@ -115,13 +115,13 @@ function samsungCardUI () {
       el: ".pagination",
       clickable: true,
     },
-    autoplay: {
-      delay: 2000,
-    },
-    loop: true,
+    // autoplay: {
+    //   delay: 2000,
+    // },
+    // loop: true,
   });
 
-  const cardSwiper1 = new Swiper(".section_cards #personal .swiper", {
+  const cardSwiper1 = new Swiper(".section_cards #personal_card .swiper", {
     slidesPerView: 5,
     slidesPerGroup: 5,
     speed: 2000,
@@ -131,7 +131,7 @@ function samsungCardUI () {
     },
   });
 
-  const cardSwiper2 = new Swiper(".section_cards #corporate .swiper", {
+  const cardSwiper2 = new Swiper(".section_cards #corporate_card .swiper", {
     slidesPerView: 5,
     slidesPerGroup: 5,
     speed: 2000,
@@ -407,6 +407,7 @@ function samsungCardUI () {
     const tabCardMove = (id) => {
       [...cardContents.children].forEach((cardContent) => {
         const targetTabItemCardContent = document.getElementById(id);
+        console.log(targetTabItemCardContent);
         const isTarget = targetTabItemCardContent === cardContent;
         isTarget
           ? targetTabItemCardContent.classList.add("is_show")
@@ -420,7 +421,7 @@ function samsungCardUI () {
         trigger: ".event_benefit_wrap",
         start: "0% 130px",
         end: "100% 100%",
-        markers: true,
+        markers: false,
         pin: true,
         scrub: 1,
       },

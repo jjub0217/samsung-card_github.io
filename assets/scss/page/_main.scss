@@ -500,10 +500,10 @@ main > * + * {
     flex-direction: column-reverse;
     align-items: center;
 
-    .image_box {
+    .image_area {
       position: relative;
+      width: 100%;
       max-width: 120px;
-
       .hover_overlay {
         display: flex;
         flex-direction: column;
@@ -531,12 +531,24 @@ main > * + * {
           content: "";
         }
       }
-
       &:hover {
         .hover_overlay {
           background-color: rgb(153, 153, 153);
           opacity: 0.8;
         }
+      }
+    }
+    .image_box {
+      position: relative;
+      top: 0;
+      padding-bottom: calc((191.2 / 120) * 100%);
+
+      img {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 7px;
       }
     }
 
@@ -671,25 +683,24 @@ main > * + * {
       width: 142px !important;
     }
     .card_item_link {
-      align-items: baseline;
-      gap: 8px;
+      align-items: flex-start;
+    }
+    .card_item_link .image_area {
+      max-width: 90px;
     }
     .card_item_link .image_box {
-      max-width: 90px;
+      // max-width: 90px;
     }
     .card_item_link .badge {
       width: fit-content;
-      position: relative;
       left: auto;
       bottom: auto;
       transform: none;
       margin-top: 16px;
     }
     .text_box {
-      align-items: baseline;
-      gap: 8px;
-      width: 142px;
-      margin-top: 0;
+      align-items: flex-start;
+      margin-top: 44px;
     }
 
     .text_box .desc {
@@ -841,9 +852,21 @@ main > * + * {
       }
     }
 
-    .image_box {
-      width: 190px;
+    .image_area {
       margin-left: auto;
+      max-width: 190px;
+      width: 100%;
+    }
+    .image_box {
+      position: relative;
+      padding-bottom: calc((213.75 / 190) * 100%);
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
@@ -878,9 +901,16 @@ main > * + * {
       background-color: #f3f6fb;
 
       .image_box {
-        height: 240px;
-      }
+        position: relative;
+        width: 100%;
+        padding-bottom: calc((240 / 256) * 100%);
 
+        img {
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+      }
       .text_box {
         width: 100%;
         padding: 24px 35px 36px 35px;
@@ -1264,8 +1294,16 @@ main > * + * {
   display: none;
 
   .image_box {
-    overflow: auto;
-    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: calc((279.24 / 370) * 100%);
+    img {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+    }
   }
 }
 
