@@ -97,11 +97,10 @@ fieldset {
 }
 
 .wrapper {
-  min-width: 1140px;
+  min-width: 1224px;
   position: relative;
 }
 .wrapper .inner {
-  max-width: 1224px;
   margin: 0 auto;
 }
 .wrapper.mobile {
