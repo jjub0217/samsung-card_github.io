@@ -8,11 +8,12 @@
 }
 
 .wrapper {
-  min-width: 1224px;
+  min-width: 1136px;
   position: relative;
 
   .inner {
     margin: 0 auto;
+    max-width: 1224px;
   }
 
   &.mobile {
