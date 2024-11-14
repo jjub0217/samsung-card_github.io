@@ -152,8 +152,8 @@ function samsungCardUI () {
     slidesPerGroup: 5,
     speed: 2000,
     navigation: {
-      nextEl: ".section_cards #corporate .corporate_card_btn_next",
-      prevEl: ".section_cards #corporate .corporate_card_btn_prev",
+      nextEl: ".corporate_card_btn_next",
+      prevEl: ".corporate_card_btn_prev",
     },
   });
 
