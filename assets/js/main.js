@@ -109,29 +109,45 @@ function samsungCardUI () {
     e.target.parentNode.classList.add("is_hidden");
   };
 
-  const visualSwiper = new Swiper(".promotion_slide_area .swiper", {
+  const createSwiper = (selector, options) => new Swiper(selector, options);
+
+  const commonA11ySettings = {
+    enabled: true,
+    containerMessage: "프로모션 슬라이드 영역입니다.",
+    slideLabelMessage:
+      "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
+    firstSlideMessage: "첫번째 슬라이드입니다.",
+    lastSlideMessage: "마지막 슬라이드입니다.",
+    paginationBulletMessage: "{{index}}번째 슬라이드로 이동합니다.",
+    containerRoleDescriptionMessage: "Carousel",
+    itemRoleDescriptionMessage: "Slide",
+    slideRole: "listitem",
+  };
+
+
+  createSwiper(".promotion_slide_area .swiper", {
+    a11y: commonA11ySettings,
     slidesPerView: 1,
     pagination: {
       el: ".pagination",
       clickable: true,
     },
-    // autoplay: {
-    //   delay: 2000,
-    // },
-    // loop: true,
   });
 
-  const cardSwiper1 = new Swiper(".section_cards #personal_card .swiper", {
+
+  createSwiper(".section_cards #personal_card .swiper", {
+    a11y: commonA11ySettings,
     slidesPerView: 5,
     slidesPerGroup: 5,
     speed: 2000,
     navigation: {
-      nextEl: ".section_cards #personal .personal_card_btn_next",
-      prevEl: ".section_cards #personal .personal_card_btn_prev",
+      nextEl: ".personal_card_btn_next",
+      prevEl: ".personal_card_btn_prev",
     },
   });
 
-  const cardSwiper2 = new Swiper(".section_cards #corporate_card .swiper", {
+  createSwiper(".section_cards #corporate_card .swiper", {
+    a11y: commonA11ySettings,
     slidesPerView: 5,
     slidesPerGroup: 5,
     speed: 2000,
@@ -141,7 +157,10 @@ function samsungCardUI () {
     },
   });
 
-  const cardSwiperMobile = new Swiper(".section_cards #mobile .swiper", {
+
+
+  createSwiper(".section_cards #mobile .swiper", {
+    a11y: commonA11ySettings,
     cssMode: true,
     slidesPerView: "auto",
     mousewheel: true,
@@ -149,7 +168,8 @@ function samsungCardUI () {
     spaceBetween: 20,
   });
 
-  const boardSwiper = new Swiper(".section_customer_protect .swiper", {
+  createSwiper(".section_customer_protect .swiper", {
+    a11y: commonA11ySettings,
     spaceBetween: 15,
     pagination: {
       el: ".pagination",
@@ -161,7 +181,8 @@ function samsungCardUI () {
     loop: true,
   });
 
-  const footerSwiper = new Swiper(".footer .inner .award_area .swiper", {
+  createSwiper(".footer .inner .award_area .swiper", {
+    a11y: commonA11ySettings,
     slidesPerView: 4.43,
     slidesPerGroup: 5,
     spaceBetween: 15,
@@ -171,6 +192,7 @@ function samsungCardUI () {
       prevEl: ".footer .inner .award_area .slide_btn_prev",
     },
   });
+
 
   // 슬라이드 재생 버튼
   controlAreas.forEach((controlArea) => {

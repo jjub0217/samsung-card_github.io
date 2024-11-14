@@ -113,26 +113,26 @@
       <nav class="pc_nav">
         <div class="inner">
           <ul class="nav_tab_list" role="tablist">
-            <li class="nav_tab_item" role="none">
+            <li class="nav_tab_item" role="presentation">
               <!-- [D] .nav_item_title 마우스오버 시 해당 .nav_item_title 의 aria-controls 값과 같은 값이 id값으로 되어있는.nav_list_box 요소에 .is_show 클래스이름 추가 및 삭제 -->
               <button class="nav_tab_title" role="tab" aria-controls="nav1" aria-selected="true" type="button">마이</button>
             </li>
-            <li class="nav_tab_item" role="none">
+            <li class="nav_tab_item" role="presentation">
               <button class="nav_tab_title" role="tab" aria-controls="nav2" aria-selected="false" type="button">혜택</button>
             </li>
-            <li class="nav_tab_item" role="none">
+            <li class="nav_tab_item" role="presentation">
               <button class="nav_tab_title" role="tab" aria-controls="nav3" aria-selected="false" type="button">카드</button>
             </li>
-            <li class="nav_tab_item" role="none">
+            <li class="nav_tab_item" role="presentation">
               <button class="nav_tab_title" role="tab" aria-controls="nav4" aria-selected="false" type="button">금융</button>
             </li>
-            <li class="nav_tab_item" role="none">
+            <li class="nav_tab_item" role="presentation">
               <button class="nav_tab_title" role="tab" aria-controls="nav5" aria-selected="false" type="button">정기결제</button>
             </li>
-            <li class="nav_tab_item" role="none">
+            <li class="nav_tab_item" role="presentation">
               <button class="nav_tab_title" role="tab" aria-controls="nav6" aria-selected="false" type="button">라이프</button>
             </li>
-            <li class="nav_tab_item" role="none">
+            <li class="nav_tab_item" role="presentation">
               <button class="nav_tab_title" role="tab" aria-controls="nav7" aria-selected="false" type="button">고객센터</button>
             </li>
           </ul>
@@ -1265,17 +1265,17 @@
           <section class="section_login">
             <h2 class="blind">로그인 및 회원가입</h2>
             <ul class="login_tab_list" role="tablist">
-              <li class="login_tab_item" role="none">
+              <li class="login_tab_item" role="presentation">
                 <!-- [D] .login_tab_title 클릭 시 해당 .login_tab_title 의 aria-controls 값과 같은 값으로 id 값인  .content .is_show 클래스이름 추가 및 삭제 -->
                 <button class="login_tab_title" aria-controls="card" role="tab" aria-selected="true" type="button">앱카드</button>
               </li>
-              <li class="login_tab_item" role="none">
+              <li class="login_tab_item" role="presentation">
                 <button class="login_tab_title" aria-controls="id" role="tab" aria-selected="false" type="button">아이디</button>
               </li>
-              <li class="login_tab_item" role="none">
+              <li class="login_tab_item" role="presentation">
                 <button class="login_tab_title" aria-controls="cert_finance"  role="tab" aria-selected="false" type="button">금융인증서</button>
               </li>
-              <li class="login_tab_item" role="none">
+              <li class="login_tab_item" role="presentation">
                 <button class="login_tab_title" aria-controls="cert_public" role="tab" aria-selected="false" type="button">공동인증서</button>
               </li>
             </ul>
@@ -1356,8 +1356,8 @@
           <div class="card_contents">
             <div class="content is_show" id="personal_card" role="tabpanel">
               <div class="swiper">
-                <ul class="swiper-wrapper">
-                  <li class="swiper-slide">
+                <ul class="swiper-wrapper" role="list">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">모니모카드</h3>
@@ -1374,7 +1374,7 @@
                       </div>
                     </a>
                   </li>
-                  <li class="swiper-slide">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">삼성 iD VITA 카드</h3>
@@ -1391,7 +1391,7 @@
                       </div>
                     </a>
                   </li>
-                  <li class="swiper-slide">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">알뜰교통플러스 삼성카드</h3>
@@ -1408,7 +1408,7 @@
                       </div>
                     </a>
                   </li>
-                  <li class="swiper-slide">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">THE ID. PLATINUM(포인트)</h3>
@@ -1425,7 +1425,7 @@
                       </div>
                     </a>
                   </li>
-                  <li class="swiper-slide">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">네이버웹툰 삼성 ID 카드</h3>
@@ -1442,7 +1442,7 @@
                       </div>
                     </a>
                   </li>
-                  <li class="swiper-slide">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">삼성 ID NOMAD 카드</h3>
@@ -1459,7 +1459,7 @@
                       </div>
                     </a>
                   </li>
-                  <li class="swiper-slide">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">삼성카드 taptap O</h3>
@@ -1476,7 +1476,7 @@
                       </div>
                     </a>
                   </li>
-                  <li class="swiper-slide">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">삼성 iD ON 카드</h3>
@@ -1493,7 +1493,7 @@
                       </div>
                     </a>
                   </li>
-                  <li class="swiper-slide">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">국민행복 삼성카드 V2</h3>
@@ -1510,7 +1510,7 @@
                       </div>
                     </a>
                   </li>
-                  <li class="swiper-slide">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">삼성 iD PET 카드</h3>
@@ -1527,7 +1527,7 @@
                       </div>
                     </a>
                   </li>
-                  <li class="swiper-slide">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">삼성 iD 달달할인 카드</h3>
@@ -1544,7 +1544,7 @@
                       </div>
                     </a>
                   </li>
-                  <li class="swiper-slide">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">삼성 iD SIMPLE 카드</h3>
@@ -1561,7 +1561,7 @@
                       </div>
                     </a>
                   </li>
-                  <li class="swiper-slide">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">& MILEAGE <br>PLATINUM</h3>
@@ -1578,7 +1578,7 @@
                       </div>
                     </a>
                   </li>
-                  <li class="swiper-slide">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">삼성 iD MOVE 카드</h3>
@@ -1595,7 +1595,7 @@
                       </div>
                     </a>
                   </li>
-                  <li class="swiper-slide">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">삼성 iD ENERGY 카드</h3>
@@ -1612,7 +1612,7 @@
                       </div>
                     </a>
                   </li>
-                  <li class="swiper-slide">
+                  <li class="swiper-slide" role="listitem">
                     <a href="" class="card_item_link">
                       <div class="text_box">
                         <h3 class="title">삼성 iD EV 카드</h3>
