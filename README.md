@@ -27,7 +27,6 @@
 
 
 ## 프로젝트 웹접근성
-
 - chrome Lighthouse 결과 :<br>
 모바일 디바이스의 접근성 표준을 준수하였는지 로컬에서 검사할수 있는 goole 의 lighthouse 로 검사하면 개선할점이 Accessibility  항목과 Best Practices 항목에서 나타납니다.  <br>
 [1] 데스크탑
