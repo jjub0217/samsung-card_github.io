@@ -18,6 +18,9 @@
 7. 로그인방법 4가지 마다 클릭하면 각기 다른 로그인 방법 UI가 나온다.
 
 
+## 콘솔에러 0 <br>
+<img src="https://github.com/user-attachments/assets/b933ef05-8d58-4d88-8361-91842b47906b" width=800> <br>
+
 ## 프로젝트 웹표준(W3C의 Markup Validation Service)
 결과 : 0개 <br>
 <img src="https://github.com/jjub0217/samsung-card_github.io/assets/62126380/ddbf94ee-5159-47ef-a1ab-b5ca819dbdea" width=800> <br>
