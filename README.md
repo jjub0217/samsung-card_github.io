@@ -40,6 +40,14 @@
 <img src="https://github.com/jjub0217/samsung-card_github.io/assets/62126380/1a0fd620-8432-447d-87d9-640e8e7e7c09" width=800>
 
 
+## 모바일 디바이스 검수
+- 안드로이드 Note20 울트라
+<video src="https://github.com/user-attachments/assets/9cf4b0d7-80dd-4ce0-9c8e-97076c7fe6a0" autoplay muted playsinline loop></video>
+- 아이폰 SE2 
+<video src="https://github.com/user-attachments/assets/77e12afe-2460-4e91-a0c7-bedde8b4e429" autoplay muted playsinline loop></video>
+- 아이패드 6
+<video src="https://github.com/user-attachments/assets/ff726cdf-36e7-48f8-8a68-010d70e08c5a" autoplay muted playsinline loop></video>
+
 ## 기술 스택
 ![HTML5](https://img.shields.io/badge/HTML5-FE642E?style=flat-square&logo=HTML5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-2E9AFE?style=flat-square&logo=CSS3&logoColor=white)
