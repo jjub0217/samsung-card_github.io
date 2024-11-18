@@ -1258,9 +1258,9 @@ main > * + * {
 .control_area .pagination .swiper-pagination-bullet {
   width: 6px;
   height: 6px;
+  margin: 3px;
   background: #dcdcdc;
   opacity: 1;
-  margin: 3px;
 }
 .control_area .pagination .swiper-pagination-bullet-active {
   width: 16px;
@@ -1447,7 +1447,6 @@ main > * + * {
   width: 100%;
   height: 52.5px;
   padding-left: 20px;
-  padding-bottom: 0;
   border: 1px solid #dcdcdc;
   border-radius: 10px;
   font-size: 14px;
@@ -1738,7 +1737,6 @@ main > * + * {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1;
   width: 32px;
   height: 32px;
 }
@@ -1789,8 +1787,8 @@ main > * + * {
 }
 .mobile .section_cards {
   margin-top: 52px;
-  border: 0;
   padding: 0;
+  border: 0;
 }
 .mobile .section_cards .headline {
   position: static;
@@ -1840,11 +1838,11 @@ main > * + * {
   max-width: 90px;
 }
 .mobile .section_cards .card_item_link .badge {
-  width: -moz-fit-content;
-  width: fit-content;
   left: auto;
   bottom: auto;
   transform: none;
+  width: -moz-fit-content;
+  width: fit-content;
   margin-top: 16px;
 }
 .mobile .section_cards .text_box {
@@ -1905,7 +1903,7 @@ main > * + * {
   height: 20px;
   background: url("../images/sp_arrow_nav.png") no-repeat;
   margin-left: 5px;
-  background-position: 0px -373px;
+  background-position: 0 -373px;
   content: "";
 }
 .promotion_wrap .promotion_finance .title,
@@ -1998,9 +1996,9 @@ main > * + * {
   line-height: 1;
 }
 .promotion_wrap .promotion_shopping .image_area {
-  margin-left: auto;
-  max-width: 190px;
   width: 100%;
+  max-width: 190px;
+  margin-left: auto;
 }
 .promotion_wrap .promotion_shopping .image_box {
   position: relative;
@@ -2023,7 +2021,7 @@ main > * + * {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  flex: 0 0 808px;
+  flex: 1;
 }
 .event_benefit_wrap .section_ongoing_event .event_list {
   display: flex;
@@ -2059,6 +2057,11 @@ main > * + * {
 .event_benefit_wrap .section_ongoing_event .event_link .text_box .title {
   font-size: 16px;
   line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 .event_benefit_wrap .section_ongoing_event .event_link .text_box .time {
   margin-top: 8px;
@@ -2122,8 +2125,6 @@ main > * + * {
   align-items: center;
 }
 .event_benefit_wrap .section_benefit .text_box {
-  position: relative;
-  z-index: 1;
   max-width: 200px;
 }
 .event_benefit_wrap .section_benefit .category {
@@ -2181,7 +2182,7 @@ main > * + * {
   height: 20px;
   margin-left: 5px;
   background: url("../images/sp_arrow_nav.png") no-repeat;
-  background-position: 0px -373px;
+  background-position: 0 -373px;
   content: "";
 }
 .section_notice .desc,

@@ -29,9 +29,9 @@ main > * + * {
     .swiper-pagination-bullet {
       width: 6px;
       height: 6px;
+      margin: 3px;
       background: #dcdcdc;
       opacity: 1;
-      margin: 3px;
     }
 
     .swiper-pagination-bullet-active {
@@ -251,7 +251,6 @@ main > * + * {
         width: 100%;
         height: 52.5px;
         padding-left: 20px;
-        padding-bottom: 0;
         border: 1px solid #dcdcdc;
         border-radius: 10px;
         font-size: 14px;
@@ -596,7 +595,6 @@ main > * + * {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1;
     width: 32px;
     height: 32px;
   }
@@ -656,8 +654,8 @@ main > * + * {
 
   .mobile & {
     margin-top: 52px;
-    border: 0;
     padding: 0;
+    border: 0;
 
     .headline {
       @include mobileHeadline;
@@ -688,14 +686,11 @@ main > * + * {
     .card_item_link .image_area {
       max-width: 90px;
     }
-    .card_item_link .image_box {
-      // max-width: 90px;
-    }
     .card_item_link .badge {
-      width: fit-content;
       left: auto;
       bottom: auto;
       transform: none;
+      width: fit-content;
       margin-top: 16px;
     }
     .text_box {
@@ -755,7 +750,7 @@ main > * + * {
         height: 20px;
         background: url("../images/sp_arrow_nav.png") no-repeat;
         margin-left: 5px;
-        background-position: 0px -373px;
+        background-position: 0 -373px;
         content: "";
       }
     }
@@ -853,9 +848,9 @@ main > * + * {
     }
 
     .image_area {
-      margin-left: auto;
-      max-width: 190px;
       width: 100%;
+      max-width: 190px;
+      margin-left: auto;
     }
     .image_box {
       position: relative;
@@ -880,7 +875,7 @@ main > * + * {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    flex: 0 0 808px;
+    flex: 1;
 
     .event_list {
       display: flex;
@@ -919,6 +914,7 @@ main > * + * {
         .title {
           font-size: 16px;
           line-height: 20px;
+          @include ellipse(2);
         }
 
         .time {
@@ -995,8 +991,6 @@ main > * + * {
       align-items: center;
     }
     .text_box {
-      position: relative;
-      z-index: 1;
       max-width: 200px;
     }
     .category {
@@ -1050,7 +1044,7 @@ main > * + * {
       height: 20px;
       margin-left: 5px;
       background: url("../images/sp_arrow_nav.png") no-repeat;
-      background-position: 0px -373px;
+      background-position: 0 -373px;
       content: "";
     }
   }

@@ -437,21 +437,33 @@ function samsungCardUI () {
       });
     };
 
+    const parentHeight = document.querySelector(".event_benefit_wrap").offsetHeight;
+    const eventList = document.querySelector(".event_list").offsetHeight;
+    const computedStyle = window.getComputedStyle(document.querySelector(".section_ongoing_event"));
+    const moreEventLink = document.querySelector(
+      ".more_event_link"
+    ).offsetHeight;
+
+    const calculatedY =
+      parentHeight - (eventList + parseFloat(computedStyle.gap) + moreEventLink);
+
+
     gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: ".event_benefit_wrap",
-        start: "0% 130px",
-        end: "100% 100%",
-        markers: false,
-        pin: true,
-        scrub: 1,
-      },
-    })
-    .to(".section_ongoing_event", {
-      yPercent: 51,
-      xPercent: 0,
-    });
+      .timeline({
+        scrollTrigger: {
+          trigger: ".event_benefit_wrap",
+          start: "0% 130px",
+          end: "100% 100%",
+          markers: false,
+          pin: true,
+          scrub: 1,
+        },
+      })
+      .to(".section_ongoing_event", {
+        ease: "power2.out",
+        y: calculatedY + "px",
+        xPercent: 0,
+      });
 
     familySite.onclick = (e) => {
       e.preventDefault();

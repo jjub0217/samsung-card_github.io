@@ -34,10 +34,10 @@
           다운로드
         </a>
       </div>
-      <button class="app_link_banner_close_button" aria-label="배너닫기" type="button">
+      <button type="button" class="app_link_banner_close_button" aria-label="배너닫기" >
       </button>
     </div>
-    <p class="blind" id="banner_status" aria-hidden="true" aria-live="polite">배너가 열려있습니다.</p>
+    <p id="banner_status" class="blind" aria-hidden="true" aria-live="polite">배너가 열려있습니다.</p>
     <!-- [D] 스크롤 시 .header 에 .js_scrolling 클래스이름을 추가 및 삭제 -->
     <header class="header">
       <!-- [D] .gnb 클릭 시 .search_chatbot_area와 .pc_nav에 .is_show 클래스이름이 붙어있을 경우 .is_show 클래스이름 삭제 -->
@@ -71,18 +71,18 @@
               <!-- [D] .search_btn 클릭 시 .search_chatbot_area에 .is_show 클래스이름 토글 -->
               <!-- [D] .search_btn 클릭 시 .dimmed 에 .is_active 클래스이름 토글 -->
               <!-- [D] .search_btn 클릭 시 .pc_nav 에 .is_show 클래스이름 있을 경우 .pc_nav 에 .is_show 클래스이름 삭제 -->
-              <button class="util_btn search_btn" 
+              <button type="button" class="util_btn search_btn" 
               aria-expanded="false" 
               aria-pressed="false"
-              aria-label="검색" type="button"></button>
+              aria-label="검색" ></button>
               <a href="" class="app_down_link">앱다운로드</a>
               <!-- [D] .menu_btn 클릭 시 모바일의 경우 .mo_gnb에 .is_show 클래스이름 토글 -->
               <!-- [D] .menu_btn 클릭 시 데스크탑의 경우 .pc_nav 에 .is_show 클래스이름 토글 -->
               <!-- [D] .menu_btn 클릭 시 데스크탑의 경우 .dimmed 에 .is_active 클래스이름 토글 -->
               <!-- [D] .menu_btn 클릭 시 .search_chatbot_area 에 .is_show 클래스이름이 붙어있을 경우 .search_chatbot_area 에 .is_show 클래스이름 삭제-->
-              <button class="util_btn menu_btn" aria-label="메뉴열기" 
+              <button type="button" class="util_btn menu_btn" aria-label="메뉴열기" 
               aria-pressed="false"
-              aria-expanded="false" aria-haspopup="menu" type="button"></button>
+              aria-expanded="false" aria-haspopup="menu" ></button>
             </div>
           </div>
           <div class="business_auth_wrap">
@@ -115,35 +115,35 @@
           <ul class="nav_tab_list" role="tablist">
             <li class="nav_tab_item" role="presentation">
               <!-- [D] .nav_item_title 마우스오버 시 해당 .nav_item_title 의 aria-controls 값과 같은 값이 id값으로 되어있는.nav_list_box 요소에 .is_show 클래스이름 추가 및 삭제 -->
-              <button class="nav_tab_title" role="tab" aria-controls="nav1" aria-selected="true" type="button">마이</button>
+              <button type="button" class="nav_tab_title" role="tab" aria-controls="nav1" aria-selected="true" >마이</button>
             </li>
             <li class="nav_tab_item" role="presentation">
-              <button class="nav_tab_title" role="tab" aria-controls="nav2" aria-selected="false" type="button">혜택</button>
+              <button type="button" class="nav_tab_title" role="tab" aria-controls="nav2" aria-selected="false" >혜택</button>
             </li>
             <li class="nav_tab_item" role="presentation">
-              <button class="nav_tab_title" role="tab" aria-controls="nav3" aria-selected="false" type="button">카드</button>
+              <button type="button" class="nav_tab_title" role="tab" aria-controls="nav3" aria-selected="false" >카드</button>
             </li>
             <li class="nav_tab_item" role="presentation">
-              <button class="nav_tab_title" role="tab" aria-controls="nav4" aria-selected="false" type="button">금융</button>
+              <button type="button" class="nav_tab_title" role="tab" aria-controls="nav4" aria-selected="false" >금융</button>
             </li>
             <li class="nav_tab_item" role="presentation">
-              <button class="nav_tab_title" role="tab" aria-controls="nav5" aria-selected="false" type="button">정기결제</button>
+              <button type="button" class="nav_tab_title" role="tab" aria-controls="nav5" aria-selected="false" >정기결제</button>
             </li>
             <li class="nav_tab_item" role="presentation">
-              <button class="nav_tab_title" role="tab" aria-controls="nav6" aria-selected="false" type="button">라이프</button>
+              <button type="button" class="nav_tab_title" role="tab" aria-controls="nav6" aria-selected="false" >라이프</button>
             </li>
             <li class="nav_tab_item" role="presentation">
-              <button class="nav_tab_title" role="tab" aria-controls="nav7" aria-selected="false" type="button">고객센터</button>
+              <button type="button" class="nav_tab_title" role="tab" aria-controls="nav7" aria-selected="false" >고객센터</button>
             </li>
           </ul>
           <div class="nav_list_wrap">
-            <div class="nav_list_box is_show" id="nav1" role="tabpanel">
+            <div id="nav1" class="nav_list_box is_show" role="tabpanel">
               <ul class="nav_list is_show">
                 <li class="nav_item">
                   <!-- [D] .nav_item_title 클릭 시 클릭한 .nav_item_title 의 부모요소인 .nav_list 에만 .is_show 클래스이름 토글 -->
                   <!-- [D] .nav_item_title 클릭 시 클릭한 .nav_item_title 의 부모요소인 .nav_list의 모든 자식요소인 .sub_list 에 .is_show 클래스이름 추가 및 삭제 -->
-                  <button class="nav_item_title" type="button" aria-expanded="true" aria-pressed="true" aria-controls="bill" >명세서</button>
-                  <ul class="sub_list" id="bill">
+                  <button type="button" class="nav_item_title" aria-expanded="true" aria-pressed="true" aria-controls="bill" >명세서</button>
+                  <ul id="bill" class="sub_list" >
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="이번달 명세서 - 삼성카드">이번달 명세서</a>
                     </li>
@@ -163,8 +163,8 @@
                   </ul>
                 </li>
                 <li class="nav_item">
-                  <button  class="nav_item_title" type="button" aria-expanded="true" aria-pressed="true" aria-controls="history">이용내역</button>
-                  <ul class="sub_list" id="history">
+                  <button type="button" class="nav_item_title" aria-expanded="true" aria-pressed="true" aria-controls="history">이용내역</button>
+                  <ul id="history" class="sub_list" >
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="카드 이용/취소/매출전표내역 - 삼성카드">카드이용/취소/매출전표내역</a>
                     </li>
@@ -200,8 +200,8 @@
               </ul>
               <ul class="nav_list">
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="credit_limit">이용한도</button>
-                  <ul class="sub_list" id="credit_limit">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="credit_limit">이용한도</button>
+                  <ul id="credit_limit" class="sub_list" >
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="카드이용한도 - 삼성카드">카드이용한도</a>
                     </li>
@@ -220,8 +220,8 @@
                   </ul>
                 </li>
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="payment">카드대금결제</button>
-                  <ul class="sub_list" id="payment">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="payment">카드대금결제</button>
+                  <ul id="payment" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title=" 즉시결제 - 삼성카드">
                         즉시결제</a>
@@ -250,8 +250,8 @@
               </ul>
               <ul class="nav_list">
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="personal">개인정보</button>
-                  <ul class="sub_list" id="personal">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="personal">개인정보</button>
+                  <ul id="personal" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="내 정보 한눈에 보기 - 삼성카드">내 정보 한눈에 보기</a>
                     </li>
@@ -285,8 +285,8 @@
                   </ul>
                 </li>
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="card_info">카드정보</button>
-                  <ul class="sub_list" id="card_info">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="card_info">카드정보</button>
+                  <ul id="card_info" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="카드발급상황 - 삼성카드">카드발급상황</a>
                     </li>
@@ -323,8 +323,8 @@
               </ul>
               <ul class="nav_list">
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="document">서류간편발급</button>
-                  <ul class="sub_list" id="document">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="document">서류간편발급</button>
+                  <ul id="document" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title=" 서류 발급 - 삼성카드">
                         서류발급</a>
@@ -337,11 +337,11 @@
                 </li>
               </ul>
             </div>
-            <div class="nav_list_box" id="nav2" role="tabpanel">
+            <div id="nav2" class="nav_list_box" role="tabpanel">
               <ul class="nav_list is_show">
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="event">이벤트</button>
-                  <ul class="sub_list" id="event">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="event">이벤트</button>
+                  <ul id="event" class="sub_list" >
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="캔디모으기 - 삼성카드">캔디 모으기</a>
                     </li>
@@ -356,8 +356,8 @@
                   </ul>
                 </li>
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="card_benefit">카드 혜택</button>
-                  <ul class="sub_list" id="card_benefit">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="card_benefit">카드 혜택</button>
+                  <ul id="card_benefit" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="나의 맞춤 혜택 - 삼성카드">
                         나의 맞춤 혜택</a>
@@ -370,8 +370,8 @@
               </ul>
               <ul class="nav_list">
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="link">LINK</button>
-                  <ul class="sub_list" id="link">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="link">LINK</button>
+                  <ul id="link" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="나의 LINK혜택 - 삼성카드">나의 LINK혜택</a>
                     </li>
@@ -381,8 +381,8 @@
                   </ul>
                 </li>
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="point">포인트</button>
-                  <ul class="sub_list" id="point">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="point">포인트</button>
+                  <ul id="point" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="포인트 조회/사용 - 삼성카드">포인트 조회/사용</a>
                     </li>
@@ -403,8 +403,8 @@
               </ul>
               <ul class="nav_list">
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="government_aupport">정부지원사업</button>
-                  <ul class="sub_list" id="government_aupport">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="government_aupport">정부지원사업</button>
+                  <ul id="government_aupport" class="sub_list" >
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title=" 정부지원금 - 삼성카드">
                         정부지원금</a>
@@ -420,8 +420,8 @@
                   </ul>
                 </li>
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="partner_benefits">혜택가맹점</button>
-                  <ul class="sub_list" id="partner_benefits">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="partner_benefits">혜택가맹점</button>
+                  <ul id="partner_benefits" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="무이자할부 가맹점 - 삼성카드">무이자할부 가맹점</a>
                     </li>
@@ -433,8 +433,8 @@
               </ul>
               <ul class="nav_list">
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="exclusive_benefits">전용혜택</button>
-                  <ul class="sub_list" id="exclusive_benefits">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="exclusive_benefits">전용혜택</button>
+                  <ul id="exclusive_benefits" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title item_link" data-link="blank_link" title="프리미엄카드 - 삼성카드"
                         target="_blank">프리미엄카드</a>
@@ -455,7 +455,7 @@
                 </li>
               </ul>
             </div>
-            <div class="nav_list_box" id="nav3" role="tabpanel">
+            <div id="nav3" class="nav_list_box" role="tabpanel">
               <ul class="nav_list is_show">
                 <li class="nav_item">
                   <a href="" class="nav_item_title item_link" title="카드 안내 - 삼성카드" target="_blank">카드안내</a>
@@ -474,8 +474,8 @@
               </ul>
               <ul class="nav_list">
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="gift_card">기프트카드</button>
-                  <ul class="sub_list" id="gift_card">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="gift_card">기프트카드</button>
+                  <ul id="gift_card" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="안내/구매 - 삼성카드">안내/구매</a>
                     </li>
@@ -495,7 +495,7 @@
                 </li>
               </ul>
             </div>
-            <div class="nav_list_box" id="nav4" role="tabpanel">
+            <div id="nav4" class="nav_list_box" role="tabpanel">
               <ul class="nav_list is_show">
                 <li class="nav_item">
                   <a href="" class="nav_item_title item_link" title="단기카드대출(현금서비스) - 삼성카드" target="_blank">단기카드대출</a>
@@ -527,14 +527,14 @@
                 </li>
               </ul>
             </div>
-            <div class="nav_list_box" id="nav5" role="tabpanel">
+            <div id="nav5" class="nav_list_box" role="tabpanel">
               <ul class="nav_list is_show">
                 <li class="nav_item">
                   <a href="" class="nav_item_title item_link" title="정기결제 - 삼성카드">정기결제메인</a>
                 </li>
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="payment_status">납부</button>
-                  <ul class="sub_list" id="payment_status">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="payment_status">납부</button>
+                  <ul id="payment_status" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="depth2-title" title="생활요금납부서비스 한번에 신청- 삼성카드">한번에 신청하기</a>
                     </li>
@@ -577,8 +577,8 @@
               </ul>
               <ul class="nav_list">
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="subscription">구독</button>
-                  <ul class="sub_list" id="subscription">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="subscription">구독</button>
+                  <ul id="subscription" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="안심쇼핑플러스상품 - 삼성카드">안심쇼핑플러스상품</a>
                     </li>
@@ -591,8 +591,8 @@
                   </ul>
                 </li>
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="notification">알림</button>
-                  <ul class="sub_list" id="notification">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="notification">알림</button>
+                  <ul id="notification" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="카드이용알림 - 삼성카드 ">카드이용알림</a>
                     </li>
@@ -628,8 +628,8 @@
               </ul>
               <ul class="nav_list">
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="agreement">약정</button>
-                  <ul class="sub_list" id="agreement">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="agreement">약정</button>
+                  <ul id="agreement" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="간편식 정기쇼핑(My 큐커 플랜) - 삼성카드">간편식 정기쇼핑(My
                         큐커플랜)</a>
@@ -638,7 +638,7 @@
                 </li>
               </ul>
             </div>
-            <div class="nav_list_box" id="nav6" role="tabpanel">
+            <div id="nav6" class="nav_list_box" role="tabpanel">
               <ul class="nav_list is_show">
                 <li class="nav_item">
                   <a href="" class="nav_item_title item_link" title="S Plus(모바일 요금제) - 삼성카드">S Plus(모바일 요금제)</a>
@@ -694,11 +694,11 @@
                 </li>
               </ul>
             </div>
-            <div class="nav_list_box" id="nav7" role="tabpanel">
+            <div id="nav7" class="nav_list_box" role="tabpanel">
               <ul class="nav_list is_show">
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="consultation">상담안내/신청</button>
-                  <ul class="sub_list" id="consultation">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="consultation">상담안내/신청</button>
+                  <ul id="consultation" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="상담하기 - 삼성카드">상담하기</a>
                     </li>
@@ -738,8 +738,8 @@
                   </ul>
                 </li>
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="consumer_protect">금융소비자보호</button>
-                  <ul class="sub_list" id="consumer_protect">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="consumer_protect">금융소비자보호</button>
+                  <ul id="consumer_protect" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="depth2-title" title="금융소비자보호 - 삼성카드">금융소비자보호포털</a>
                     </li>
@@ -760,8 +760,8 @@
               </ul>
               <ul class="nav_list">
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="international">해외이용</button>
-                  <ul class="sub_list" id="international">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="international">해외이용</button>
+                  <ul id="international" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="해외 이용 종합 안내 - 삼성카드">해외 이용 종합안내</a>
                     </li>
@@ -786,8 +786,8 @@
                   </ul>
                 </li>
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="card_required">카드 이용 필수정보</button>
-                  <ul class="sub_list" id="card_required">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="card_required">카드 이용 필수정보</button>
+                  <ul id="card_required" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="신용카드 소비자가이드 - 삼성카드">신용카드 소비자가이드</a>
                     </li>
@@ -823,8 +823,8 @@
                   <a href="" class="nav_item_title item_link qna" title="">자주하는질문(FAQ)</a>
                 </li>
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="board">뉴스/공지사항</button>
-                  <ul class="sub_list" id="board">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="board">뉴스/공지사항</button>
+                  <ul id="board" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="공지사항 - 삼성카드">공지사항</a>
                     </li>
@@ -839,8 +839,8 @@
               </ul>
               <ul class="nav_list">
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="auth">인증센터</button>
-                  <ul class="sub_list" id="auth">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="auth">인증센터</button>
+                  <ul id="auth" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="스마트폰 공동인증서 복사 - 삼성카드">스마트폰 공동인증서 복사</a>
                     </li>
@@ -853,8 +853,8 @@
                   </ul>
                 </li>
                 <li class="nav_item">
-                  <button class="nav_item_title" type="button" aria-expanded="false" aria-pressed="false" aria-controls="security">보안 설정</button>
-                  <ul class="sub_list" id="security">
+                  <button type="button" class="nav_item_title" aria-expanded="false" aria-pressed="false" aria-controls="security">보안 설정</button>
+                  <ul id="security" class="sub_list">
                     <li class="sub_item">
                       <a href="" class="sub_item_title" title="보안프로그램 설치 - 삼성카드">보안프로그램 설치</a>
                     </li>
@@ -911,9 +911,9 @@
           <div class="search_area">
             <div class="input_box">
               <label for="search" class="blind" aria-label="검색어입력"></label>
-              <input type="text" placeholder="검색어를 입력해주세요" class="input" title="검색어를 입력해 주세요." id="search" aria-invalid="true">
-              <button class="input_clear_btn" aria-label="검색어전체삭제" type="button"></button>
-              <button class="input_search_button" type="button" aria-label="검색">
+              <input type="text" id="search" placeholder="검색어를 입력해주세요" class="input" title="검색어를 입력해 주세요." aria-invalid="true">
+              <button type="button" class="input_clear_btn" aria-label="검색어전체삭제" ></button>
+              <button type="button" class="input_search_button" aria-label="검색">
               </button>
             </div>
           </div>
@@ -923,7 +923,7 @@
                 <img src="./assets/images/img_chatbot.png" alt="챗봇">
               </div>
               <div class="chatbot_box">
-                <a href="" title="새 창" class="chatbot_link">챗봇 샘에게 물어보기</a>
+                <a href="" class="chatbot_link" title="새 창" >챗봇 샘에게 물어보기</a>
                 <ul class="tag_list">
                   <li class="tag_item">
                     <a href=""># 매주 미리 내기</a>
@@ -1040,10 +1040,10 @@
           </div>
         </div>
         <!-- [D] .mo_gnb_close_btn 클릭 시 .mo_gnb 에 .is_show 클래스이름 토글 -->
-        <button class="mo_gnb_close_btn" type="button" aria-label="모바일메뉴닫기" aria-expanded="true"></button>
+        <button type="button" class="mo_gnb_close_btn" aria-label="모바일메뉴닫기" aria-expanded="true"></button>
       </nav>
     </header>
-    <main class="container" id="main">
+    <main id="main" class="container">
       <div class="app_link_area-mobile">
         <div class="inner">
           <h2 class="headline">카드의 모든것<br>앱에서 다 할 수 있어요!</h2>
@@ -1257,7 +1257,7 @@
               <div class="control_area">
                 <div class="pagination">
                 </div>
-                <input id="visual_autoplay" type="checkbox" class="checkbox" checked>
+                <input type="checkbox" id="visual_autoplay" class="checkbox" checked>
                 <label for="visual_autoplay" class="blind">슬라이드재생버튼</label>
               </div>
             </div>
@@ -1267,32 +1267,31 @@
             <ul class="login_tab_list" role="tablist">
               <li class="login_tab_item" role="presentation">
                 <!-- [D] .login_tab_title 클릭 시 해당 .login_tab_title 의 aria-controls 값과 같은 값으로 id 값인  .content .is_show 클래스이름 추가 및 삭제 -->
-                <button class="login_tab_title" aria-controls="card" role="tab" aria-selected="true" type="button">앱카드</button>
+                <button type="button" class="login_tab_title" role="tab" aria-controls="card" aria-selected="true" >앱카드</button>
               </li>
               <li class="login_tab_item" role="presentation">
-                <button class="login_tab_title" aria-controls="id" role="tab" aria-selected="false" type="button">아이디</button>
+                <button type="button" class="login_tab_title" role="tab" aria-controls="id" aria-selected="false" >아이디</button>
               </li>
               <li class="login_tab_item" role="presentation">
-                <button class="login_tab_title" aria-controls="cert_finance"  role="tab" aria-selected="false" type="button">금융인증서</button>
+                <button type="button" class="login_tab_title" role="tab" aria-controls="cert_finance"   aria-selected="false" >금융인증서</button>
               </li>
               <li class="login_tab_item" role="presentation">
-                <button class="login_tab_title" aria-controls="cert_public" role="tab" aria-selected="false" type="button">공동인증서</button>
+                <button type="button" class="login_tab_title" role="tab" aria-controls="cert_public" aria-selected="false" >공동인증서</button>
               </li>
             </ul>
             <div class="login_contents">
-              <div class="content is_show" id="card" role="tabpanel">
+              <div id="card" class="content is_show" role="tabpanel">
                 <div class="icon_box">
                   <p class="desc">삼성카드 앱의 <br>결제 비밀번호로 로그인 해주세요.</p>
                 </div>
               </div>
-              <div class="content" id="id" role="tabpanel">
+              <div id="id" class="content" role="tabpanel">
                 <form class="form">
                   <fieldset class="fieldset">
                     <legend class="blind">로그인폼</legend>
                     <div class="id_area">
                       <label for="input_id" class="blind">아이디입력</label>
-                      <input type="text" placeholder="아이디 6~12자리 입력" maxlength="12" title="아이디" id="input_id" class="input"
-                        aria-required="true">
+                      <input type="text" id="input_id" placeholder="아이디 6~12자리 입력" class="input" title="아이디" maxlength="12" aria-required="true">
                       <span class="remember_id">
                         <input type="checkbox" id="remember_me" class="remember_id_checkbox" >
                         <label for="remember_me" class="remember_id_label" aria-label="아이디저장 체크박스"></label>
@@ -1301,24 +1300,23 @@
                     </div>
                     <div class="password_area">
                       <label for="input_password" class="blind">비밀번호입력</label>
-                      <input type="password" placeholder="비밀번호 6~20자리 입력" maxlength="20" title="비밀번호" id="input_password" class="input"
-                        aria-required="true">
+                      <input type="password" id="input_password" placeholder="비밀번호 6~20자리 입력" class="input" title="비밀번호" maxlength="20" aria-required="true">
                       <a href="" aria-label="보안프로그램다운로드링크"></a>
                     </div>
                   </fieldset>
                 </form>
               </div>
-              <div class="content" id="cert_finance" role="tabpanel">
+              <div id="cert_finance" class="content" role="tabpanel">
                 <div class="icon_box">
                   <p class="desc">금융인증서로 로그인 해주세요.</p>
                 </div>
               </div>
-              <div class="content" id="cert_public" role="tabpanel">
+              <div id="cert_public" class="content" role="tabpanel">
                 <div class="icon_box">
                   <p class="desc">금융인증서로 로그인 해주세요.</p>
                 </div>
               </div>
-              <button class="login_btn" type="submit">로그인</button>
+              <button type="submit" class="login_btn">로그인</button>
               <div class="content_util">
                 <a href="" class="util_desc content_util_link">삼성카드 앱 안내</a>
                 <a href="" class="content_util_link">회원가입</a>
@@ -1347,14 +1345,14 @@
           <ul class="card_tab_list" role="tablist">
             <li class="card_tab_item" role="none">
               <!-- [D] .card_tab_title 클릭 시 aria-controls 값과 같은 값으로 id 값인 .content 에 .is_show 클래스이름 추가 및 삭제-->
-              <button class="card_tab_title" aria-selected="true" aria-controls="personal_card" type="button" role="tab">개인카드</button>
+              <button type="button" class="card_tab_title" role="tab" aria-selected="true" aria-controls="personal_card" >개인카드</button>
             </li>
             <li class="card_tab_item" role="none">
-              <button class="card_tab_title" aria-selected="false" aria-controls="corporate_card" type="button" role="tab">법인카드</button>
+              <button type="button" class="card_tab_title" role="tab" aria-selected="false" aria-controls="corporate_card" >법인카드</button>
             </li>
           </ul>
           <div class="card_contents">
-            <div class="content is_show" id="personal_card" role="tabpanel">
+            <div id="personal_card" class="content is_show" role="tabpanel">
               <div class="swiper">
                 <ul class="swiper-wrapper" role="list">
                   <li class="swiper-slide" role="listitem">
@@ -1631,11 +1629,11 @@
                   </li>
                 </ul>
               </div>
-              <button class="slide_btn personal_card_btn_prev" aria-label="이전슬라이드" type="button"></button>
-              <button class="slide_btn personal_card_btn_next" aria-label="다음슬라이드" type="button"></button>
+              <button type="button" class="slide_btn personal_card_btn_prev" aria-label="이전슬라이드"></button>
+              <button type="button" class="slide_btn personal_card_btn_next" aria-label="다음슬라이드"></button>
             </div>
 
-            <div class="content" id="corporate_card" role="tabpanel">
+            <div id="corporate_card" class="content" role="tabpanel">
               <div class="swiper">
                 <ul class="swiper-wrapper">
                   <li class="swiper-slide">
@@ -1722,7 +1720,7 @@
               <button class="slide_btn corporate_card_btn_next" aria-label="다음슬라이드" type="button"></button>
             </div>
 
-            <div class="content" id="mobile">
+            <div id="mobile" class="content" >
               <div class="swiper">
                 <ul class="swiper-wrapper">
                   <li class="swiper-slide">
@@ -2285,7 +2283,7 @@
               <div class="control_area">
                 <div class="pagination">
                 </div>
-                <input id="board-autoplay" type="checkbox" class="checkbox" checked>
+                <input type="checkbox" id="board-autoplay" class="checkbox" checked>
                 <label for="board-autoplay" class="blind">슬라이드재생버튼</label>
               </div>
             </div>
@@ -2327,9 +2325,9 @@
           </ul>
           <article class="family_site_area">
             <h2>
-              <button aria-pressed="false" type="button" aria-expanded="false" aria-controls="family_list" class="family_site_area_title">패밀리사이트</button>
+              <button type="button" class="family_site_area_title" aria-pressed="false" aria-expanded="false" aria-controls="family_list" >패밀리사이트</button>
             </h2>
-            <ul class="family_list" id="family_list">
+            <ul id="family_list" class="family_list">
               <li class="family_item">
                 <a href="#" target="_blank" class="link_family">쇼핑</a>
               </li>
@@ -2467,8 +2465,8 @@
                 </li>
               </ul>
             </div>
-            <button class="slide_btn slide_btn_prev" aria-label="이전슬라이드" type="button"></button>
-            <button class="slide_btn slide_btn_next" aria-label="다음슬라이드" type="button"></button>
+            <button type="button" class="slide_btn slide_btn_prev" aria-label="이전슬라이드"></button>
+            <button type="button" class="slide_btn slide_btn_next" aria-label="다음슬라이드"></button>
           </div>
         </div>
       </div>
@@ -2500,8 +2498,8 @@
         <div class="inner">
           <ul class="policy_list">
             <li class="policy_item">
-              <button class="policy_item_title title" aria-pressed="false" type="button" aria-expanded="false" aria-controls="address_area">사업자정보</button>
-              <address class="address_area" id="address_area">
+              <button type="button" class="policy_item_title title" aria-pressed="false" aria-expanded="false" aria-controls="address_area">사업자정보</button>
+              <address id="address_area" class="address_area">
                 <ul class="address_list">
                   <li class="address_item">
                     <span class="category">대표이사 사장</span>
